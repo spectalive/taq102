@@ -22,7 +22,7 @@ appliance back. The journal is `docs/journal.md`.
 ## Security
 
 ## Bugs
-- [ ] **The saved MAC is not applied on v90, so the tablet changes IP.**
+- [~] **The saved MAC is not applied on v90, so the tablet changes IP.**
   Seen 2026-09-26 on the mini: mid-test the tablet re-associated as
   `5e:92:f4:93:0f:09` (random), took a new lease, and dropped off .52; kmsg
   had no "MAC ... from /data/wifi.mac" line for this boot. By hand over
@@ -34,6 +34,11 @@ appliance back. The journal is `docs/journal.md`.
   returns before that block whenever wlan0 already exists. Next: set the
   address with the link down, log a failure to kmsg, and apply it on the
   early-return path too; then check kmsg after a cold boot.
+  2026-09-27: fixed in `taq102-wifi` (`pin_mac`, used on both paths, link
+  down before the address, a kmsg line on failure). Run from `/tmp` over the
+  USB console after forcing `5e:92:f4:93:0f:09`: kmsg `MAC 00:e0:4c:06:ff:af
+  from /data/wifi.mac`, re-associated with that address and the same lease
+  (.57). Left: ship it in the next image and read kmsg after a cold boot.
 
 - [x] Fix false desk staleness when QLC+ sends WebSocket Ping/Pong without
   text (2026-09-13). Instrumentation reproduced three drops in ten minutes

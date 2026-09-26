@@ -23,8 +23,33 @@ CONF=/data/wifi.conf
 MACFILE=/data/wifi.mac
 IFACE=wlan0
 
+# The saved MAC, applied with the link down: the driver refuses a new
+# address on an interface that is up, and the refusal used to be silent, so
+# the tablet came back as a random MAC and a new lease (2026-09-26, v90: no
+# "MAC ... from" line in kmsg, re-association as 5e:92:f4:93:0f:09). It also
+# runs when wlan0 already exists, which is the case whenever the module was
+# loaded before this script ran.
+pin_mac() {
+    if [ -s "$MACFILE" ]; then
+        want=$(cat "$MACFILE")
+        have=$(cat /sys/class/net/$IFACE/address 2>/dev/null)
+        [ "$want" = "$have" ] && return 0
+        ip link set $IFACE down 2>/dev/null
+        if ip link set $IFACE address "$want" 2>/dev/null; then
+            echo "taq102-wifi: MAC $want from $MACFILE" > /dev/kmsg
+        else
+            echo "taq102-wifi: could not set MAC $want from $MACFILE;" \
+                 "$IFACE stays $have" > /dev/kmsg
+        fi
+    elif [ -d /data/. ]; then
+        cat /sys/class/net/$IFACE/address > "$MACFILE" 2>/dev/null &&
+            echo "taq102-wifi: kept this boot's random MAC in $MACFILE" > /dev/kmsg
+    fi
+}
+
 load() {
     if [ -d /sys/class/net/$IFACE ]; then
+        pin_mac
         return 0
     fi
     # The BSP powers the chip through its own rfkill node before the SDIO
@@ -69,13 +94,7 @@ load() {
         return 1
     fi
 
-    if [ -s "$MACFILE" ]; then
-        ip link set $IFACE address "$(cat "$MACFILE")" 2>/dev/null &&
-            echo "taq102-wifi: MAC $(cat "$MACFILE") from $MACFILE" > /dev/kmsg
-    elif [ -d /data/. ]; then
-        cat /sys/class/net/$IFACE/address > "$MACFILE" 2>/dev/null &&
-            echo "taq102-wifi: kept this boot's random MAC in $MACFILE" > /dev/kmsg
-    fi
+    pin_mac
     return 0
 }
 

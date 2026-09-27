@@ -21,18 +21,21 @@ mkdir -p "$here/output"
 work=$(mktemp -d "$here/output/desk-ramdisk.XXXXXX")
 trap 'rm -rf "$work"' EXIT
 trap 'exit 1' HUP INT TERM
-mkdir -p "$work/payload/usr/bin" "$work/payload/usr/share/dmxdesk"
+mkdir -p "$work/payload/usr/bin" "$work/payload/usr/sbin" "$work/payload/usr/share/dmxdesk"
 cp "$here/output/dmxdesk" "$work/payload/usr/bin/dmxdesk"
 cp "$here/br2-external/package/dmxdesk/taq102-desk" "$work/payload/usr/bin/taq102-desk"
 cp "$here/br2-external/board/taq102/rootfs-overlay/usr/bin/taq102-app" "$work/payload/usr/bin/taq102-app"
+# The base rootfs predates the saved-MAC fix (ef53dfd); the later entry wins.
+cp "$here/br2-external/package/taq102-wifi/taq102-wifi" "$work/payload/usr/sbin/taq102-wifi"
 cp "$dmxdesk/show/vibra.desk.json" "$work/payload/usr/share/dmxdesk/vibra.desk.json"
 python3 "$dmxdesk/tools/desk-map-version.py" "$dmxdesk" > "$work/payload/usr/share/dmxdesk/VERSION"
-chmod 0755 "$work/payload/usr/bin/"* "$work/payload/usr/share/dmxdesk"
+chmod 0755 "$work/payload/usr/bin/"* "$work/payload/usr/sbin/"* "$work/payload/usr/share/dmxdesk"
 chmod 0644 "$work/payload/usr/share/dmxdesk/"*
 (
     cd "$work/payload"
     printf '%s\n' usr/share/dmxdesk usr/bin/dmxdesk usr/bin/taq102-desk \
-        usr/bin/taq102-app usr/share/dmxdesk/vibra.desk.json usr/share/dmxdesk/VERSION |
+        usr/bin/taq102-app usr/sbin/taq102-wifi usr/share/dmxdesk/vibra.desk.json \
+        usr/share/dmxdesk/VERSION |
         cpio -o -H newc -R 0:0
 ) > "$work/extra.cpio"
 gzip -dc "$base" > "$work/combined.cpio"

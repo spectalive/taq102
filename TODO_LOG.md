@@ -6,6 +6,29 @@
 
 ### 2026-09
 
+- [x] 2026-09-27 - **v91: dmxdesk v0.1.2 and the saved MAC, flashed and
+  accepted.** `recovery-taq102-v91-desk.img` (gate3-build) is v90's recipe with
+  dmxdesk v0.1.2 (338551d) and `taq102-wifi` appended to the overlay, since the
+  v87 base predates `pin_mac` (ef53dfd). Parsing every newc entry: two
+  `usr/sbin/taq102-wifi`, the last byte-identical to the package's, mode 0755;
+  `VERSION` workspace 097d28d5..., dmxdesk e49be39, not dirty, map 12c98f99....
+  Flashed 02:52 by `tools/loader-watch.sh recovery` after a detached
+  `reboot-loader`, readback verified (43080bea...). On the boot that followed
+  the loader's reset (a full boot of the new image, not a power-off): kmsg
+  `taq102-wifi: MAC 00:e0:4c:06:ff:af from /data/wifi.mac`, wlan0 kept that
+  address and 192.168.1.57, closing "the saved MAC is not applied on v90".
+  Desk acceptance by injected taps against a QLC+ 5.2.2 on the mini's :9997
+  with the v0.1.9 show (I/O stripped): 148 of 144 controls enabled; releasing
+  a latched pick pressed the hook `releaseTo` names for the room on (ROJO under
+  AUTO -> Colores completos 64, under CHARLA -> Luz charla 69; Circulo under
+  CHARLA -> Centro 111, under AUTO nothing), each hook Running afterwards, 22
+  of 22 checks; toggles went out 209-280 ms apart; PARAR TODO with a toggle
+  still queued logged `toggle: dropped 124|255: stop-all` before `stop: sent
+  20|255`. desk.conf is back on :9998, where the operator's QLC+ still runs the
+  pre-v0.1.9 show: 8 of 144 controls enabled (the four whose widget and
+  function did not move, and the fixed four); the rest refuse with "drives
+  another cue" until that QLC+ loads the new Vibra.qxw.
+
 - [x] 2026-09-26 - **The MacBook's clone is on the rewritten history.** It was
   clean at 429a9fe with no stash, and `git cherry origin/main HEAD` found no
   commit missing upstream, so `git fetch && git reset --hard origin/main` took

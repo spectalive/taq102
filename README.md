@@ -190,7 +190,8 @@ archives in one gzip stream. The diagnostic `/init`, modules, fonts and all
 unrelated contents and modes survive. Existing output files are refused.
 
 The overlay installs `/usr/bin/dmxdesk`, `/usr/bin/taq102-desk`, the updated
-`taq102-app`, `/usr/share/dmxdesk/vibra.desk.json` and a `VERSION` line with the
+`taq102-app`, the updated `/usr/sbin/taq102-wifi` (the base rootfs predates its
+saved-MAC fix), `/usr/share/dmxdesk/vibra.desk.json` and a `VERSION` line with the
 workspace SHA256, the dmxdesk checkout's HEAD, dirty state and map-file SHA256. The launcher
 waits for `silead_ts` and `rk805 pwrkey` by name; the master remains in
 `/data/desk.conf`, and output remains in `/data/log/taq102-app.log`.

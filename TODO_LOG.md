@@ -2,7 +2,66 @@
 
 > Searchable record of closed project work. Active work lives in `TODO.md`.
 
+<!-- tadu:log v1 since 2026-10-12 -->
+
 ## 2026
+
+### 2026-10
+
+#### Moved from TODO.md (2026-10-12)
+
+- [x] **Bugs:** Fix false desk staleness when QLC+ sends WebSocket Ping/Pong without
+  text (2026-09-13). Instrumentation reproduced three drops in ten minutes
+  with no preceding loop iteration over 200 ms. The packet-correlated drop
+  closed only 605 ms after the desk answered a master Ping; that activity
+  was discarded by the text-only silence clock. Count valid control frames,
+  preserve one outstanding probe's RTT clock, and keep the 750 ms threshold.
+  Replay fails before the fix and passes after it, including a real-silence
+  drop at 751 ms. Host gate: 41 PASS, 0 FAIL. Control-frame fix alone: one transport-loss
+  drop in ten minutes; the final 100 ms probe cadence had zero drops in
+  its completed ten-minute window.
+  Evidence: `docs/evidence/2026-09-13-link-regression/README.md`.
+
+- [x] **Bugs:** Qualify the desk's 100 ms heartbeat cadence with its unchanged 750 ms
+  silence deadline. After fixing control-frame activity, a second captured
+  drop had no loop stall: the Mac replied in 7 ms, but that reply and its
+  retransmission were not acknowledged before the tablet closed. The desk
+  had spent 400 ms waiting to probe and gave transport only 405 ms before
+  closing. Probe at 100 ms to reserve about 550 ms including an idle poll;
+  do not extend the stale deadline. The 514 ms reply replay fails with the
+  old cadence and passes with the new one; real silence still drops at 751 ms.
+  Radio/AP/driver attribution is not established; Wi-Fi power save is unchanged.
+  Final live window [184972682, 185572682) ms: zero drops, versus three
+  before the fix in ten minutes. At 20:15:52 UTC, PID 8050 remained linked
+  to the host on port 9998. This short live window is not long-show qualification.
+  Evidence:
+  `docs/evidence/2026-09-13-link-regression/README.md`.
+
+- [x] **Bugs:** Triage the desk geometry audit (2026-09-13). Brightness now reaches
+  8..255 on its painted track, the room/link word is bounded after the tabs,
+  exterior coordinates cannot commit touches, and setup arrows are 48x48.
+  The detector retains its original thresholds and exhaustive probes; its
+  injected 16 px pager strip still fails. Evidence and verification:
+  `docs/evidence/`.
+
+- [x] **Bugs:** Retain modal setup navigation intentionally. The 80 zero-reach tab
+  observations described interception, not missing controls. Tabs are now
+  explicitly disabled while setup is open in router and audit metadata.
+  Regression obligation: keep the all-tabs modal assertion when routing changes;
+  gear, lock and the master column remain available.
+
+- [x] **Bugs:** Retain expanded setup list-row hits intentionally. Each of eight audited
+  rows accepted 4,000 px beyond its paint (8 px sides, 4 px vertically).
+  `desk_setup_row_hit` declares that envelope; the audit verifies it without
+  deriving allowance from successful hits. Regression obligation: update the
+  declaration with any row-layout change. The old arrow offset was corrected.
+
+- [x] **Bugs:** Retain deliberately inert backgrounds and gutters. The original 37 dead
+  components mixed empty layout with potential defects. Production inert-mask
+  declarations now distinguish them, with hard failures if an exemption covers
+  enabled paint or actions. Regression obligation: retain the injected bottom
+  16 px pager-strip failure when changing layout or dead-component policy.
+
 
 ### 2026-09
 

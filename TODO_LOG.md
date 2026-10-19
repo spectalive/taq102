@@ -62,6 +62,11 @@
   enabled paint or actions. Regression obligation: retain the injected bottom
   16 px pager-strip failure when changing layout or dead-component policy.
 
+- [x] 2026-10-19 — **DMX desk (Phase A):** Pin dmxdesk v0.1.4: the request channel survives a supplicant
+  restart while nothing is pending (dmxdesk ab3cd7e).
+  - Result: DMXDESK_VERSION v0.1.4, dmxdesk.hash sha256 15808ff5... of the GitHub archive (two downloads matched), dmxdesk-shared.txt tag line v0.1.4 (all 41 shared files byte-identical to dmxdesk src/).
+  - Evidence: VM: make dmxdesk-dirclean dmxdesk rc=0, 'dmxdesk-v0.1.4.tar.gz: OK'; tools/get-dmxdesk.sh checked out v0.1.4; tools/build-dmxdesk.sh exit 0 (GCC 14.3.0, ARM ELF); python3 tests/boot/desk_boot_test.py exit 0, 9 scenarios; tools/test-control-centre-host.sh exit 0, 19/19 PASS on macOS.
+
 - [x] 2026-10-19 — **DMX desk (Phase A):** `wpa_ctrl_abandon` that fails to redial leaves the request channel dead
   for the rest of the run (pre-existing: no reconnect on a dial failure;
   the reviewer of the asynchronous work noted the exposure grew since

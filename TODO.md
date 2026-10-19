@@ -57,29 +57,6 @@ appliance back. The journal is `docs/journal.md`.
   and the triage report. Next: add a busy/disabled setup fixture and a shared
   pure routing seam before changing runtime dispatch, preserving model probes.
 
-- [ ] Reconcile the desk's inert touch-flip configuration and misleading log.
-  `src/dmxdesk.c` configures `DMXDESK_TOUCH_FLIP` and prints
-  `touch: declared 1663x895, mapping 1024x600, xy`, but never calls
-  `touch_input_set_flipped`; the decoder starts with `flipped == 0`, so
-  `touch_flip_value` returns after scaling without applying either flip.
-  The real mapping is x = round(raw_x * 1024/1664),
-  y = round(raw_y * 600/896). `src/glcube.c` does apply its orientation:
-  its accelerometer path calls `control_input_reset`, which calls
-  `touch_input_set_flipped` in `src/control_input.c`. The inconsistency is
-  in dmxdesk, not glcube. Next: decide whether the desk lacks an intended
-  setter call or its mode and log are vestigial, then make configuration and
-  reporting agree. Leave the working desk unchanged for my show;
-  resolve the endpoint bug below before enabling any flip.
-- [ ] Correct the flipped-coordinate endpoints in `src/touch_flip.c` before
-  enabling the desk's flip. `touch_flip_value` returns `config->height - value`
-  and `config->width - value`; these should be `height - 1 - value` and
-  `width - 1 - value`. Raw 0 currently becomes y 600 on a 600-tall screen
-  (or x 1024 at width 1024), outside the valid pixel range; for valid scaled
-  input columns 0..1023, output column 0 is unreachable. This is latent in
-  dmxdesk because it never enables flipping, but glcube can reach the shared
-  flip path through `control_input_reset`. Next: cover both axes and both
-  endpoints with regression assertions, fix the subtraction, and qualify
-  orientation before enabling it in the desk. No behaviour change now.
 - [ ] Qualify the RK816 input-limit cache fix in mainline patch 0008 on a
   later authorised kernel boot. On 2026-09-13, sysfs reported 1500 mA while
   hardware held 450 mA (0xa1=0x40); an accepted repeat override did not write
@@ -312,11 +289,12 @@ appliance back. The journal is `docs/journal.md`.
   Blocked: needs the tablet unplugged and the power button held by hand; RK816 shutdown path in the kernel to read first.
 ## Infrastructure and tooling
 
-- [ ] `loader-watch.sh` still polls `rkdeveloptool` with no per-call timeout, so
-  any future libusb wedge hangs it rather than reporting one. The Pioneer daemon
-  that used to cause it is disabled now (`TODO_LOG.md`, 2026-09-13), which
-  removes the known trigger but not the failure mode. Smallest action: a
-  per-call `timeout` around `rkdeveloptool` and a line saying what it means.
+- [ ] Two control-centre host tests do not build on Linux: GCC 15 (OrbStack
+  `taq102`, -Werror) rejects `snprintf` into 256-byte paths with
+  -Wformat-truncation in `tests/control-centre/backlight_test.c:25` and
+  `settings_test.c:91`; macOS clang passes all 19 (2026-10-19, 17/19 on
+  Linux). Smallest action: size those buffers for the joined path (or check
+  the return), then rerun `tools/test-control-centre-host.sh` in the VM.
 - [ ] Mainline `u_serial` warns in `gs_close()` when the host vanishes with
   the ACM console open (seen when the Mac rebooted). Harmless; a report for
   the gadget list some day.
@@ -335,18 +313,13 @@ file under `src/desk_*`, `src/dmxdesk.c`, the Wi-Fi and QLC+ session sources,
 repository's; a fix there reaches the tablet by tagging a release and bumping
 the pin here.
 
-- [ ] Check the unterminated mainline defconfig patch-directory assignment.
-  `br2-external/configs/taq102_mainline_defconfig` contains
-  `BR2_GLOBAL_PATCH_DIR="` with no closing quote (already present at HEAD).
-  The desk package was validated using the existing VM configuration plus
-  `olddefconfig`, not a fresh defconfig import. Next: test a fresh import in an
-  isolated output directory and normalize the intended empty string if needed.
-- [ ] Hide SHOW's empty Fijo heading when the map has no fixed accent toggle.
-  The ed1dac1 map removed `color-beam`; `src/desk_show_layout.c` still emits
-  Fijo unconditionally. The host `desk.ppm` shows an empty label to the right
-  of five hits; all LIVE controls are placed and geometry passes unchanged.
-  Next: emit that heading only for a placed toggle, then rerun renderer and
-  geometry checks without relaxing their thresholds.
+- [~] Put dmxdesk v0.1.3 on the tablet. The pin, hash and `output/dmxdesk`
+  are v0.1.3 (map icons drawn on 111 tiles, Fijo only over a toggle, the
+  supplicant redial, `flip none` in the log); `make O=/work/output-mainline
+  dmxdesk` verified the hash and built it. Not flashed. Next: build a desk
+  ramdisk and recovery image from it (README, "Mainline desk image") and
+  flash with `tools/loader-watch.sh recovery`, then look at the icons and
+  read the new `touch:` line in `/data/log/taq102-app.log`.
 - [ ] Implement the fog cooldown policy once its exact timing is settled.
   I-approved cooldown is not built: `src/desk_build_holds.c` registers
   every burst, including fog, with cooldown 0 (formerly in `dmxdesk.c`).
@@ -387,10 +360,6 @@ the pin here.
   and colour/shutter priority at the rig, then regenerate and validate the
   map with the approved show and bind it to the workspace actually loaded.
   Position/colour-attribute additions need their own output-range evidence.
-- [ ] `DMX-Fixtures` has no `docs/` in its tip, although the brain page
-  describes five documents there (`qxw-format.md`, `rig.md`,
-  `show-operation.md`, `qlcplus-environment.md`, `toolkit.md`). Find out
-  whether that work was ever committed, and fix either the repo or the page.
 
 - [ ] The XY pad's range disagrees between the two sources: the workspace's
   `<Pan Min="0" Max="255"/>` and `<Tilt Min="0" Max="255"/>` against
@@ -470,11 +439,6 @@ the pin here.
   "Circulo") are the show's to fix; CABEZAS heading "AUTO" covers "Centro" too.
   The running-room word overlap is fixed and covered by the geometry audit
   (2026-09-13), including a maximum-length room caption.
-- [ ] `wpa_ctrl_abandon` that fails to redial leaves the request channel dead
-  for the rest of the run (pre-existing: no reconnect on a dial failure;
-  the reviewer of the asynchronous work noted the exposure grew since
-  abandon now runs on every timeout). Smallest action: a bounded retry of
-  the dial on the next request.
 - [ ] Supplicant lifecycle waits remain outside the desk loop:
   `wpa_ctrl_open` waits up to 1 s for `ATTACH`, and `wpa_ctrl_close` waits up
   to 200 ms for `DETACH` (including cleanup after a failed open). Runtime

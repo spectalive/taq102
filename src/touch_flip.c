@@ -45,8 +45,8 @@ int touch_flip_value(const struct touch_flip *config, enum touch_axis axis,
                          (axis == TOUCH_AXIS_X ? config->scale_x : config->scale_y));
     if (!flipped) return value;
     if (axis == TOUCH_AXIS_X && (config->axes & FLIP_X))
-        return config->width - value;
+        return config->width - 1 - value;
     if (axis == TOUCH_AXIS_Y && (config->axes & FLIP_Y))
-        return config->height - value;
+        return config->height - 1 - value;
     return value;
 }

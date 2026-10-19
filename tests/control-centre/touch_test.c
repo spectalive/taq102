@@ -166,7 +166,7 @@ static void test_input_loss_and_capacity(void) {
     };
     n = touch_input_feed(ti, after_flip, 4, ev, 8);
     assert(n == 1 && ev[0].kind == TOUCH_DOWN);
-    assert(ev[0].x == 1004.f && ev[0].y == 570.f);
+    assert(ev[0].x == 1003.f && ev[0].y == 569.f);
 
     struct touch_raw pending_up =
         R(EV_ABS, ABS_MT_TRACKING_ID, -1, 6.1f);
@@ -422,6 +422,32 @@ static void test_router_opens_within_batch(void) {
     touch_router_free(r);
 }
 
+static void test_flip_endpoints(void) {
+    /* A flipped axis mirrors inside the panel: column 0 is 1023 and 1023 is
+     * 0, row 0 is 599 and 599 is 0. Subtracting from the width put raw 0 one
+     * past the last pixel and left column 0 unreachable (fixed 2026-10-19;
+     * glcube reaches it through control_input_reset). */
+    struct touch_flip flip;
+    assert(touch_flip_configure(&flip, 1024, 600, 1023, 599, "xy") == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 0, 1) == 1023);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 1023, 1) == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 0, 1) == 599);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 599, 1) == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 0, 0) == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 599, 0) == 599);
+    /* Mainline silead's own grid, 1663x895: the scaled extremes still land
+     * on the first and last pixel. */
+    assert(touch_flip_configure(&flip, 1024, 600, 1663, 895, "xy") == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 0, 1) == 1023);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 1663, 1) == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 0, 1) == 599);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 895, 1) == 0);
+    /* One axis flipped, the other passes through. */
+    assert(touch_flip_configure(&flip, 1024, 600, 1023, 599, "y") == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_X, 0, 1) == 0);
+    assert(touch_flip_value(&flip, TOUCH_AXIS_Y, 0, 1) == 599);
+}
+
 static void test_slot_selection_survives_flip_and_cancel(void) {
     /* ABS_MT_SLOT is only sent when the kernel's selection changes, so a
      * flip or a logical cancel must not forget it: the next contact reported
@@ -458,6 +484,7 @@ int main(void) {
     test_router_capture();
     test_router_panel_queue();
     test_router_opens_within_batch();
+    test_flip_endpoints();
     test_slot_selection_survives_flip_and_cancel();
     puts("touch ok");
     return 0;

@@ -62,6 +62,76 @@
   enabled paint or actions. Regression obligation: retain the injected bottom
   16 px pager-strip failure when changing layout or dead-component policy.
 
+- [x] 2026-10-19 — **DMX desk (Phase A):** `wpa_ctrl_abandon` that fails to redial leaves the request channel dead
+  for the rest of the run (pre-existing: no reconnect on a dial failure;
+  the reviewer of the asynchronous work noted the exposure grew since
+  abandon now runs on every timeout). Smallest action: a bounded retry of
+  the dial on the next request.
+  - Result: wpa_ctrl_begin redials once per request when an abandon left no socket; one attempt, no loop or wait (dmxdesk f5dd224, v0.1.3).
+  - Evidence: dmxdesk wpa_ctrl_test PASS: fake supplicant killed, abandon, requests fail at once (<100 ms), fake back on the same path, next request gets PONG; the same test aborts at that begin with the old wpa_ctrl_begin.c.
+
+- [x] 2026-10-19 — **DMX desk (Phase A):** `DMX-Fixtures` has no `docs/` in its tip, although the brain page
+  describes five documents there (`qxw-format.md`, `rig.md`,
+  `show-operation.md`, `qlcplus-environment.md`, `toolkit.md`). Find out
+  whether that work was ever committed, and fix either the repo or the page.
+  - Result: Nothing was lost: rig.md and show-operation.md are in Vibra-Lab/vibra-lighting docs/ (the renamed DMX-Fixtures); qxw-format.md, qlcplus-environment.md and toolkit.md moved to spectalive/qlctool docs/ with the toolkit. The brain page vibra-dmx.md now says so (wiki 16e0a1909).
+  - Evidence: git ls-tree --name-only origin/main docs/ lists docs/rig.md and docs/show-operation.md in vibra-lighting, and docs/qxw-format.md, docs/qlcplus-environment.md, docs/toolkit.md in qlctool.
+
+- [x] 2026-10-19 — **DMX desk (Phase A):** Hide SHOW's empty Fijo heading when the map has no fixed accent toggle.
+  The ed1dac1 map removed `color-beam`; `src/desk_show_layout.c` still emits
+  Fijo unconditionally. The host `desk.ppm` shows an empty label to the right
+  of five hits; all LIVE controls are placed and geometry passes unchanged.
+  Next: emit that heading only for a placed toggle, then rerun renderer and
+  geometry checks without relaxing their thresholds.
+  - Result: The Fijo heading is emitted only after a fixed accent toggle is placed (dmxdesk cb5df70, v0.1.3).
+  - Evidence: dmxdesk desk_layout_test PASS (no Fijo on the shipped map; a LIVE accent turned toggle brings it back over its cue); geometry audit unchanged thresholds: SUMMARY views=30 failures=0 warnings=0; tools/test-dmx-desk-host.sh 45/45 on macOS and Linux.
+
+- [x] 2026-10-19 — **DMX desk (Phase A):** Check the unterminated mainline defconfig patch-directory assignment.
+  `br2-external/configs/taq102_mainline_defconfig` contains
+  `BR2_GLOBAL_PATCH_DIR="` with no closing quote (already present at HEAD).
+  The desk package was validated using the existing VM configuration plus
+  `olddefconfig`, not a fresh defconfig import. Next: test a fresh import in an
+  isolated output directory and normalize the intended empty string if needed.
+  - Result: BR2_GLOBAL_PATCH_DIR="" (the intended empty value: the comment above says the 4.4-headers patch does not apply on mainline; unterminated since a44a877).
+  - Evidence: Fresh import in the taq102 OrbStack VM (Buildroot 2026.02.3): make O=/work/defcheck-new BR2_EXTERNAL=.../br2-external taq102_mainline_defconfig rc=0, no Kconfig warnings, .config has BR2_GLOBAL_PATCH_DIR=""; the HEAD file imported the same way warned "old_mainline_defconfig:38: warning: invalid string found".
+
+- [x] 2026-10-19 — **Infrastructure and tooling:** `loader-watch.sh` still polls `rkdeveloptool` with no per-call timeout, so
+  any future libusb wedge hangs it rather than reporting one. The Pioneer daemon
+  that used to cause it is disabled now (`TODO_LOG.md`, 2026-09-13), which
+  removes the known trigger but not the failure mode. Smallest action: a
+  per-call `timeout` around `rkdeveloptool` and a line saying what it means.
+  - Result: Each rkdeveloptool ld poll runs under a perl alarm (RK_TIMEOUT, default 10 s; macOS has no timeout(1)); a timeout prints what it means and polling continues. Writes are never timed out.
+  - Evidence: Fake rkdeveloptool runs: hanging fake (RK_TIMEOUT=1 TIMEOUT=5) printed the wedge line twice and gave up after 5 s in 6.2 s total; no-device fake gave up after 3 s; loader fake caught it and zeroed the BCB; real rkdeveloptool with no tablet: gave up after 3 s, exit 1.
+
+- [x] 2026-10-19 — **Bugs:** Correct the flipped-coordinate endpoints in `src/touch_flip.c` before
+  enabling the desk's flip. `touch_flip_value` returns `config->height - value`
+  and `config->width - value`; these should be `height - 1 - value` and
+  `width - 1 - value`. Raw 0 currently becomes y 600 on a 600-tall screen
+  (or x 1024 at width 1024), outside the valid pixel range; for valid scaled
+  input columns 0..1023, output column 0 is unreachable. This is latent in
+  dmxdesk because it never enables flipping, but glcube can reach the shared
+  flip path through `control_input_reset`. Next: cover both axes and both
+  endpoints with regression assertions, fix the subtraction, and qualify
+  orientation before enabling it in the desk. No behaviour change now.
+  - Result: touch_flip_value returns width - 1 - value and height - 1 - value (dmxdesk 266de97; src/touch_flip.c refreshed from v0.1.3). Flip stays off in the desk; orientation still to qualify before enabling it.
+  - Evidence: tools/test-control-centre-host.sh exit 0, 19/19 PASS (touch_test now asserts both axes and both endpoints, incl. 1663x895; it aborts at the flipped-frame assertion with the old touch_flip.c); dmxdesk touch_flip_test PASS.
+
+- [x] 2026-10-19 — **Bugs:** Reconcile the desk's inert touch-flip configuration and misleading log.
+  `src/dmxdesk.c` configures `DMXDESK_TOUCH_FLIP` and prints
+  `touch: declared 1663x895, mapping 1024x600, xy`, but never calls
+  `touch_input_set_flipped`; the decoder starts with `flipped == 0`, so
+  `touch_flip_value` returns after scaling without applying either flip.
+  The real mapping is x = round(raw_x * 1024/1664),
+  y = round(raw_y * 600/896). `src/glcube.c` does apply its orientation:
+  its accelerometer path calls `control_input_reset`, which calls
+  `touch_input_set_flipped` in `src/control_input.c`. The inconsistency is
+  in dmxdesk, not glcube. Next: decide whether the desk lacks an intended
+  setter call or its mode and log are vestigial, then make configuration and
+  reporting agree. Leave the working desk unchanged for my show;
+  resolve the endpoint bug below before enabling any flip.
+  - Result: Decision: the mode and log were vestigial; the desk keeps its behaviour (no flip) and now configures "none" and logs "touch: declared WxH, mapping 1024x600, scale SXxSY, flip none" (dmxdesk 266de97, released in v0.1.3 and pinned here).
+  - Evidence: dmxdesk tools/test-dmx-desk-host.sh exit 0, 45/45 PASS on macOS and 45/45 on Linux (OrbStack); tools/build-dmxdesk.sh and make O=/work/output-mainline dmxdesk build v0.1.3 under -Werror (GCC 14.3.0).
+
 
 ### 2026-09
 

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-DMXDESK_VERSION = v0.1.4
+DMXDESK_VERSION = v0.1.5
 DMXDESK_SITE = $(call github,spectalive,dmxdesk,$(DMXDESK_VERSION))
 DMXDESK_LICENSE = GPL-2.0+ (dmxdesk), MIT (cJSON)
 DMXDESK_LICENSE_FILES = LICENSE cJSON.c

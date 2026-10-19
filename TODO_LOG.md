@@ -62,6 +62,17 @@
   enabled paint or actions. Regression obligation: retain the injected bottom
   16 px pager-strip failure when changing layout or dead-component policy.
 
+- [x] 2026-10-19 — **DMX desk (Phase A):** Put dmxdesk v0.1.4 on the tablet. The pin, hash and `output/dmxdesk`
+  are v0.1.4 (map icons drawn on 111 tiles, Fijo only over a toggle, the
+  supplicant redial after an abandon and after an idle restart, `flip none`
+  in the log); `make O=/work/output-mainline dmxdesk` verified the hash and
+  built it. Not flashed. Next: build a desk ramdisk and recovery image from
+  it (README, "Mainline desk image") and flash with
+  `tools/loader-watch.sh recovery`, then look at the icons and read the new
+  `touch:` line in `/data/log/taq102-app.log`.
+  - Result: v92 on the tablet: dmxdesk v0.1.5 (v0.1.4's code plus the qlctool v0.2.2 desk map, step-by-step wheel swatches).
+  - Evidence: recovery-taq102-v92-desk.img (gate3-build; rootfs-v87-sleep-logo + desk overlay, kernel v86, second v88) flashed 2026-10-19 06:22 by tools/loader-watch.sh recovery after a detached reboot-loader, readback verified db145ace...; booted VERSION repo=c4fccf0 dirty=false map 3e2f3955... workspace 1e90d411... (= the mini's Vibra.qxw); log: 'touch: declared 1663x895, mapping 1024x600, scale 0.615x0.670, flip none' and '148 of 144 controls enabled against the master's console' on the mini's :9998; a SIGUSR1 /tmp/desk.ppm of SHOW shows the icons on states, bursts and fog tiles and no empty Fijo heading
+
 - [x] 2026-10-19 — **DMX desk (Phase A):** Pin dmxdesk v0.1.4: the request channel survives a supplicant
   restart while nothing is pending (dmxdesk ab3cd7e).
   - Result: DMXDESK_VERSION v0.1.4, dmxdesk.hash sha256 15808ff5... of the GitHub archive (two downloads matched), dmxdesk-shared.txt tag line v0.1.4 (all 41 shared files byte-identical to dmxdesk src/).

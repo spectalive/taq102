@@ -313,14 +313,6 @@ file under `src/desk_*`, `src/dmxdesk.c`, the Wi-Fi and QLC+ session sources,
 repository's; a fix there reaches the tablet by tagging a release and bumping
 the pin here.
 
-- [~] Put dmxdesk v0.1.4 on the tablet. The pin, hash and `output/dmxdesk`
-  are v0.1.4 (map icons drawn on 111 tiles, Fijo only over a toggle, the
-  supplicant redial after an abandon and after an idle restart, `flip none`
-  in the log); `make O=/work/output-mainline dmxdesk` verified the hash and
-  built it. Not flashed. Next: build a desk ramdisk and recovery image from
-  it (README, "Mainline desk image") and flash with
-  `tools/loader-watch.sh recovery`, then look at the icons and read the new
-  `touch:` line in `/data/log/taq102-app.log`.
 - [ ] Implement the fog cooldown policy once its exact timing is settled.
   I-approved cooldown is not built: `src/desk_build_holds.c` registers
   every burst, including fog, with cooldown 0 (formerly in `dmxdesk.c`).

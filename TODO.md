@@ -313,6 +313,11 @@ file under `src/desk_*`, `src/dmxdesk.c`, the Wi-Fi and QLC+ session sources,
 repository's; a fix there reaches the tablet by tagging a release and bumping
 the pin here.
 
+- [ ] `/data/log/taq102-app.log` grows without rotation: 143,431,240 bytes on
+  2026-10-19 after 22 days up, mostly the desk's `desk: N flips so far` line
+  every ten seconds. A `grep` over it pegged the tablet (load 15) and outlived
+  the ssh timeout. Next: rotate or cap it in the launcher (keep the last few
+  MB), and decide whether an unchanged flips line needs repeating.
 - [ ] Implement the fog cooldown policy once its exact timing is settled.
   I-approved cooldown is not built: `src/desk_build_holds.c` registers
   every burst, including fog, with cooldown 0 (formerly in `dmxdesk.c`).

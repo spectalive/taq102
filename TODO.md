@@ -328,7 +328,9 @@ the pin here.
   reconnects with the rig; keep the master-side duration bound.
 - [~] Qualify the finite fog bursts with the rig. All 17 bounded bursts,
   including HUMO YA and HUMO VERT, ship in `show/vibra.desk.json` with
-  master-side SingleShot bounds (`fca61bf`, `8892dcc`, `ecc3379`). The former
+  master-side SingleShot bounds (`fca61bf`, `8892dcc`, `ecc3379`); the
+  five-second limit reached the v95 tablet and the Mac mini's loaded QLC+
+  workspace on 2026-10-21. The former
   requirement to implement a finite fog cue is complete. Still owed: observe
   physical DMX output reaching zero by the deadline with the client killed
   and Wi-Fi pulled during ON. Next: the hands-on rig session below; do not
@@ -415,15 +417,16 @@ the pin here.
   rig timing/HTP priority and cooldown remain open, as does Phase 6 position.
   Show readiness is not established by these bench checks alone.
 - [!] The second design's checks that need a finger on the tablet (the desk
-  runs there with SHOW first, every hit a bounded burst): hold FLASH and see
+  runs there with SHOW first, every hit a bounded burst; v95 linked to the
+  Mac mini over Wi-Fi on 2026-10-21): hold FLASH and see
   the light while held and the tile amber, lift and see it off; hold past
   eight seconds and see the master end it by itself; HUMO YA and HUMO VERT
-  the same at three seconds; two fingers on two hits; tap a state, a colour,
+  the same at five seconds; two fingers on two hits; tap a state, a colour,
   an ambient rhythm and OFF; TAP on the tempo card; the tab strip and the
   pager; the gear, Cerrar, the keyboard; the lock target in the bar. Then
   the durations: 8 s for the flashes and the colour hits, 4 s for the
-  strobes, 3 s for the fog are provisional, in `BURST_MS` in the show
-  repository's `desk_policy.py`. Smallest action: I at the tablet
+  strobes and 5 s for the fog are provisional, in `BURST_MS` in qlctool's
+  `qlctool/placement.py`. Smallest action: I at the tablet
   with the rig on, fifteen minutes.
 - [ ] Second design leftovers, from the reviewer's critique of the built frames
   (`docs/evidence/`): the burst durations
@@ -431,8 +434,7 @@ the pin here.
   per-hit judgment is in `docs/evidence/`:
   fog and full-intensity flashes win HTP; colour hits can mix to white over
   a complementary state, strobes can lose a shutter to a running chase);
-  the master's readout is above the travel now but the pressed
-  request marker and the level's word still want a look on the tablet under
+  the master's readout and thumb still want a look on the tablet under
   a finger; segmented discs have stepped edges (no anti-aliasing in the
   round-rect primitive); accents in the show's own captions ("AUTO rapido",
   "Circulo") are the show's to fix; CABEZAS heading "AUTO" covers "Centro" too.

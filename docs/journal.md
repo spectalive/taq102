@@ -1801,3 +1801,21 @@ logged `link ready (linked)` again. The temporary Buildroot configuration was
 restored and its trial build output cleaned; its pretrial images and config
 were preserved separately before cleanup. No Qt files were added to the
 production image or repository.
+
+## 2026-10-21 — Full Qt Quick desk comparison
+
+The owner requested a functional Qt version after the visual prototype. The
+Qt Quick desk now launches the existing C control engine as a headless child,
+so it uses the same QLC+ show map, connection state and hold-release behavior
+as the shipped desk. The new surface retains the established layout, icon
+artwork, fine BPM adjustment, rig colors, color hits, effects and smoke
+controls. A physical EGLFS capture at 1024x600 is recorded in the dmxdesk
+repository. On the tablet the Qt process reached `link ready (linked)` with
+the real show master; a separate mock-master run covered mode changes, color
+hits, stop-all and release of a held Flash after the UI process exits.
+
+The trial launcher temporarily stops the C desk, limits Qt to 30 minutes and
+restores the C desk when Qt exits. A capture trial exercised that fallback and
+the restored C desk linked to QLC+ again. The C desk remains the boot default
+while the owner compares the interfaces. A matching Buildroot runtime with
+PNG support and physical touch verification remain open.

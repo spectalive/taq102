@@ -302,6 +302,13 @@ appliance back. The journal is `docs/journal.md`.
 
 ## DMX desk (Phase A)
 
+- [~] Complete the isolated Qt Quick desk trial on the tablet. The existing
+  C desk remains the boot default. The Qt ARM process rendered at 1024x600
+  through EGLFS and linked to QLC+; the mock master covered local actions,
+  stop-all and Flash release. A capture trial returned to the linked C desk.
+  Next: finish the isolated Buildroot Qt bundle, verify physical touch and
+  record the owner's comparison.
+
 The tablet as a control surface for the Vibra QLC+ show, with the show
 MacBook as master. Design and evidence:
 `docs/journal.md`, the reviewer review in

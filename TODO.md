@@ -47,10 +47,10 @@ appliance back. The journal is `docs/journal.md`.
 - [ ] Hands-on tablet check of geometry fixes: brightness's 8..255 end bands,
   ellipsized long room/link captions and setup's 48x48 paging arrows. Host
   probes and ARM compilation cannot establish physical tap comfort. Evidence:
-  `docs/evidence/`. Version v0.1.6 also brings the 2026-10-21 haze, palette
-  and layout changes. The tablet at its documented address was unreachable by
-  SSH on 2026-10-21. Next: deploy in an idle window and check those controls
-  directly; the linked port-9998 show was not disturbed by this task.
+  `docs/evidence/`. Version v0.1.7 with the 2026-10-21 haze, palette,
+  layout, white swatch and BPM refinements was installed on the tablet;
+  `docs/evidence/show-v94-live.png` captures its linked SHOW screen. Next:
+  check those controls by hand for tap comfort and response on the panel.
 - [ ] Extend geometry-audit state/routing coverage. The full-pixel detector
   mirrors the runtime's fresh-contact dispatch in `audit/reach.c`; arbitrary
   network text, every disabled/busy combination, lock transitions and partial

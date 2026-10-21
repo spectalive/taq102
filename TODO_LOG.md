@@ -8,6 +8,10 @@
 
 ### 2026-10
 
+- [x] 2026-10-21 — **Prepared the v0.1.6 desk image for installation.**
+  - Result: Pinned dmxdesk v0.1.6, cross-compiled its ARM binary, built the Buildroot package and assembled a new v93 recovery image without replacing the running v92 image.
+  - Evidence: Buildroot accepted the release tarball hash and installed the package; `tools/build-dmxdesk.sh` produced an ARM EABI executable; `rootfs-v93-desk.cpio.gz` passed `gzip -t`; `recovery-taq102-v93-desk.img` has SHA256 `0105afb999c2f7105053515dd5989b363958a7a8283666d2d73863b01016bfe0`. Physical installation remains in `TODO.md`.
+
 #### Moved from TODO.md (2026-10-12)
 
 - [x] **Bugs:** Fix false desk staleness when QLC+ sends WebSocket Ping/Pong without

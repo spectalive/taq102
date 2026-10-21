@@ -311,7 +311,10 @@ appliance back. The journal is `docs/journal.md`.
   master. The owner's visual comparison led to restored effect colour swatches,
   icon gaps, the red Stop All face and the selected room accent. A bounded
   physical capture loaded the updated Qt QML, then restored the C desk and its
-  QLC+ link. Next: review this revision with the owner, then resume the preserved
+  QLC+ link. The owner preferred the earlier compact hold pads; a second
+  physical capture verified their side-by-side icon and name layout and teal
+  fog treatment, again restoring the linked C desk. Next: review this revision
+  with the owner, then resume the preserved
   isolated Buildroot build and verify the remaining physical gestures.
 
 The tablet as a control surface for the Vibra QLC+ show, with the show

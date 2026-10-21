@@ -1849,3 +1849,8 @@ colour squares, wider icon-to-label gaps, the red Stop All face and the active
 room accent. A bounded EGLFS capture showed the updated Directo screen on the
 physical tablet. The launcher returned to the C desk, which re-established
 its QLC+ connection. The updated Mac Qt window also linked to the same show.
+
+The owner preferred the earlier compact layout of the six Directo hold pads.
+Their Qt face now puts the mark beside the name, leaves MANTENER as a quiet
+footer, and gives fog holds a teal field. A second bounded tablet capture
+showed this revision; the C desk and its QLC+ connection returned afterward.

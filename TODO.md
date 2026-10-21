@@ -326,11 +326,10 @@ the pin here.
   alone does not impose a minimum interval between bursts. Next: confirm the
   duration and enforcement point at the rig, then test retriggering and
   reconnects with the rig; keep the master-side duration bound.
-- [~] Qualify the finite fog bursts with the rig. All 17 bounded bursts,
+- [~] Qualify the finite fog bursts with the rig. All 25 hits,
   including HUMO YA and HUMO VERT, ship in `show/vibra.desk.json` with
-  master-side SingleShot bounds (`fca61bf`, `8892dcc`, `ecc3379`); the
-  five-second limit reached the v95 tablet and the Mac mini's loaded QLC+
-  workspace on 2026-10-21. The former
+  controller-side Flash maximum holds; the five-second fog limit reached the
+  v96 tablet and the Mac mini's modified QLC+ runtime on 2026-10-21. The former
   requirement to implement a finite fog cue is complete. Still owed: observe
   physical DMX output reaching zero by the deadline with the client killed
   and Wi-Fi pulled during ON. Next: the hands-on rig session below; do not
@@ -458,18 +457,18 @@ the pin here.
   against a fake supplicant only (`tests/dmx-desk/wifi_join_test.c`); the
   event names it waits for are wpa_supplicant's documented ones. Smallest
   action: I at the tablet with the key, ten minutes.
-- [ ] The link banner covers the compact state row on the family pages while
-  connecting; it is transient and nothing is pressable then, but a banner
-  that sits under the row instead would read better.
+- [~] Confirm the waiting overlay on the physical tablet. The desk now paints
+  it last as a foreground card over every page; the render test confirms its
+  position above the controls. Next: inspect the connected screen during a
+  deliberate master disconnect and reconnect.
 - [ ] A page or bank change repaints the whole screen once, about 41 ms on
   the tablet: one frame, off the drag path, so it stays.
-- [~] Resolve burst priority over a running state (Phase 5). All 17 hits now
-  ship enabled as bounded bursts, not disabled held controls. SingleShot does
-  not confer Flash priority or ForceLTP: complementary colour hits can mix
-  to white, strobes can lose the shutter to a chase, and vertical smoke drives
-  four columns. Evidence: `docs/evidence/`.
-  Next: use the hands-on rig session to choose additive intensity or another
-  show policy per hit and verify restoration of the underlying look.
+- [~] Verify burst priority over a running state at the physical rig (Phase 5).
+  All 25 hits now press capped Flash buttons with Override and ForceLTP, and
+  the v96 tablet enables them against the live modified QLC+ runtime. Loopback
+  Art-Net keeps all four 7R wheels white over Fiesta and returns them to the
+  underlying colour after expiry, including a disconnected client. Next:
+  measure colour, shutter, smoke and restoration at the FT232R output.
 - [ ] Show mode: the appliance sleeps the screen after five minutes idle, and
   a desk waiting for the next cue is idle. Hold the screen on during a show,
   give the power button a defined behaviour, and cancel every contact on a

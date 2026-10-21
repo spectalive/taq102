@@ -1755,3 +1755,15 @@ the cube ran. Reboot: the desk again, `link ready (linked)`, the socket
 `/data/desk.conf` still named `192.168.1.76`, which DHCP had meanwhile handed
 to the tablet itself; the Mac's Ethernet is `.63` now and that is what the
 file says.
+
+## 2026-10-21 — v96 bounded priority desk
+
+Pinned dmxdesk v0.1.9 and built the ARM executable and Buildroot package.
+Built `rootfs-v96-desk.cpio.gz` and `recovery-taq102-v96-desk.img` from the
+preserved v87 base, then wrote v96 to both recovery and boot. Both partition
+readbacks matched the image SHA256
+`cd192d3bc2fdadacf689ba756b9bf565ee5cb9081463dbdfce233026f53ea5f8`.
+The tablet booted the desk on the first attempt; the on-device executable and
+map matched their build hashes, and the desk logged a linked QLC+ controller
+with controls enabled. The former v95 image remains on disk for recovery.
+Physical DMX output and a finger check of the waiting overlay are still open.

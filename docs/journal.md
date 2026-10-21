@@ -1828,3 +1828,14 @@ output was checked for Qt Base, EGLFS, PNG and Qt Quick. The lengthy Qt Quick
 build was interrupted at host compile step 1127/2987 to prioritize the Mac
 comparison. Its output directory remains intact and can resume with the same
 Buildroot command once the interface direction is settled.
+
+A later bounded capture with the corrected Qt text returned to the C desk
+process successfully. The configured QLC+ endpoint then refused connections;
+the master destination was not changed. The intended master instance needs
+verification before claiming that the restored desk is linked.
+
+The Qt text pass then covered Directo, Ritmo, Ajustes, the keyboard and every
+effect family and bank in the Mac preview. Its opt-in text audit reported zero
+visible overflow or elision. The corrected backend passed the mock-master
+gesture and held-Flash release test. The final QML also rendered offscreen on
+the tablet's Qt runtime while the C desk kept the physical display.

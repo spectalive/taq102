@@ -1843,3 +1843,9 @@ effect family and bank in the Mac preview. Its opt-in text audit reported zero
 visible overflow or elision. The corrected backend passed the mock-master
 gesture and held-Flash release test. The final QML also rendered offscreen on
 the tablet's Qt runtime while the C desk kept the physical display.
+
+After the owner compared Qt with the C desk, the Qt trial restored the effect
+colour squares, wider icon-to-label gaps, the red Stop All face and the active
+room accent. A bounded EGLFS capture showed the updated Directo screen on the
+physical tablet. The launcher returned to the C desk, which re-established
+its QLC+ connection. The updated Mac Qt window also linked to the same show.

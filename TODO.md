@@ -308,7 +308,10 @@ appliance back. The journal is `docs/journal.md`.
   stop-all and Flash release. A capture trial returned to the linked C desk.
   Real tablet touches reached the C backend and switched show controls. A
   separate Mac preview now supports agent taps and screenshots against a mock
-  master. Next: complete the owner's comparison, then resume the preserved
+  master. The owner's visual comparison led to restored effect colour swatches,
+  icon gaps, the red Stop All face and the selected room accent. A bounded
+  physical capture loaded the updated Qt QML, then restored the C desk and its
+  QLC+ link. Next: review this revision with the owner, then resume the preserved
   isolated Buildroot build and verify the remaining physical gestures.
 
 The tablet as a control surface for the Vibra QLC+ show, with the show

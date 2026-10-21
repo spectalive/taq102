@@ -1834,6 +1834,10 @@ process successfully. The configured QLC+ endpoint then refused connections;
 the master destination was not changed. The intended master instance needs
 verification before claiming that the restored desk is linked.
 
+The owner later identified another open QLC+ instance as the cause of that
+refusal. A follow-up process and listening-port check found no QLC+ process
+running, so reconnection to the intended instance remains to be observed.
+
 The Qt text pass then covered Directo, Ritmo, Ajustes, the keyboard and every
 effect family and bank in the Mac preview. Its opt-in text audit reported zero
 visible overflow or elision. The corrected backend passed the mock-master

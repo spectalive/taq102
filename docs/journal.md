@@ -1819,3 +1819,12 @@ restores the C desk when Qt exits. A capture trial exercised that fallback and
 the restored C desk linked to QLC+ again. The C desk remains the boot default
 while the owner compares the interfaces. A matching Buildroot runtime with
 PNG support and physical touch verification remain open.
+
+The desk can now be previewed on macOS against a local mock master, with an
+opt-in stdin channel for taps, held touches and screenshots. That shortens
+visual iteration without directing commands to the real show. The isolated
+Buildroot configuration is saved as `taq102_qt_trial_defconfig`; its Kconfig
+output was checked for Qt Base, EGLFS, PNG and Qt Quick. The lengthy Qt Quick
+build was interrupted at host compile step 1127/2987 to prioritize the Mac
+comparison. Its output directory remains intact and can resume with the same
+Buildroot command once the interface direction is settled.

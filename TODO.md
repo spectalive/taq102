@@ -306,8 +306,10 @@ appliance back. The journal is `docs/journal.md`.
   C desk remains the boot default. The Qt ARM process rendered at 1024x600
   through EGLFS and linked to QLC+; the mock master covered local actions,
   stop-all and Flash release. A capture trial returned to the linked C desk.
-  Next: finish the isolated Buildroot Qt bundle, verify physical touch and
-  record the owner's comparison.
+  Real tablet touches reached the C backend and switched show controls. A
+  separate Mac preview now supports agent taps and screenshots against a mock
+  master. Next: complete the owner's comparison, then resume the preserved
+  isolated Buildroot build and verify the remaining physical gestures.
 
 The tablet as a control surface for the Vibra QLC+ show, with the show
 MacBook as master. Design and evidence:

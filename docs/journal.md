@@ -1767,3 +1767,18 @@ The tablet booted the desk on the first attempt; the on-device executable and
 map matched their build hashes, and the desk logged a linked QLC+ controller
 with controls enabled. The former v95 image remains on disk for recovery.
 Physical DMX output and a finger check of the waiting overlay are still open.
+
+## 2026-10-21 — v97 compact reconnect status
+
+Pinned dmxdesk v0.1.10, verified its source archive checksum in Buildroot,
+and built the ARM executable and package. Built `rootfs-v97-desk.cpio.gz` and
+`recovery-taq102-v97-desk.img` from the preserved v87 base. The image SHA256
+is `6dba4c173870c636165ea5809461d71843a0c6ced7cf0aaf0d606077e26c62ce`.
+Recovery and boot partition readbacks both matched it. The tablet booted the
+desk and its executable SHA256 matched the local build:
+`d68f4720dae29507332066b3378606c08936cb618836699f2cd8575f6d7f983c`.
+The installed VERSION names dmxdesk commit `c95d1a0`, the expected show hash
+and the expected desk map hash. The runtime log moved through connection
+retries to `link ready (linked)` with controls enabled. The previous v96 image
+remains on disk for recovery. A visual check on the physical tablet during a
+deliberate weak Wi-Fi reconnect remains open.

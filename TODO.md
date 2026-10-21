@@ -457,10 +457,10 @@ the pin here.
   against a fake supplicant only (`tests/dmx-desk/wifi_join_test.c`); the
   event names it waits for are wpa_supplicant's documented ones. Smallest
   action: I at the tablet with the key, ten minutes.
-- [~] Confirm the waiting overlay on the physical tablet. The desk now paints
-  it last as a foreground card over every page; the render test confirms its
-  position above the controls. Next: inspect the connected screen during a
-  deliberate master disconnect and reconnect.
+- [~] Confirm the reconnect status on the physical tablet. dmxdesk v0.1.10
+  shows a small status-bar warning during connection and sync, leaving the
+  page undimmed; the render test covers both states. Next: inspect the screen
+  during a deliberate master disconnect and reconnect over weak Wi-Fi.
 - [ ] A page or bank change repaints the whole screen once, about 41 ms on
   the tablet: one frame, off the drag path, so it stays.
 - [~] Verify burst priority over a running state at the physical rig (Phase 5).

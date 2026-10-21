@@ -311,14 +311,6 @@ appliance back. The journal is `docs/journal.md`.
   master. Next: complete the owner's comparison, then resume the preserved
   isolated Buildroot build and verify the remaining physical gestures.
 
-- [~] Confirm the restored C desk reconnects to the intended QLC+ master.
-  After the bounded Qt capture on 2026-10-21, the supervisor and C desk were
-  running, but the configured master endpoint returned `Connection refused`.
-  The owner identified another open QLC+ instance as the cause. The destination
-  was left unchanged. No QLC+ process was running during the follow-up check.
-  Next: open the intended show instance and verify the C desk logs
-  `link ready (linked)`.
-
 The tablet as a control surface for the Vibra QLC+ show, with the show
 MacBook as master. Design and evidence:
 `docs/journal.md`, the reviewer review in

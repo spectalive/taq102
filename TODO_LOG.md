@@ -8,6 +8,10 @@
 
 ### 2026-10
 
+- [x] 2026-10-21 — **DMX desk (Phase A):** Confirm the restored C desk reconnects to the intended QLC+ master.
+  - Result: The configured tablet destination remained unchanged; the C desk and Mac Qt trial both connected to the intended show.
+  - Evidence: QLC+ Vibra opened Vibra.qxw on port 9998; HTTP 200 and two established tablet connections were observed, including the running C desk. The Qt backend logged link ready (linked).
+
 - [x] 2026-10-21 — **Installed the v0.1.7 SHOW desk on the tablet.**
   - Result: Pinned dmxdesk v0.1.7, built the ARM executable and v94 recovery image, flashed it through the USB loader, and confirmed that the linked tablet shows the white swatch, BPM steps, icons, full effect names and smaller master controls. The prior v93 image also booted and linked successfully before this update.
   - Evidence: Buildroot verified the v0.1.7 tarball SHA256 `51bffb3b...` and built and installed the package; `tools/build-dmxdesk.sh` produced an ARM EABI executable; all 9 boot/launcher scenarios passed; `rootfs-v94-desk.cpio.gz` passed `gzip -t`; loader readback matched image SHA256 `98b733df6c34bde212eb6b1e7f39131d5d932fa9b0d630cd971fc073a3d6fa5e`. Tablet `VERSION` reports `repo=7d32d6b... dirty=false`, the desk process is running, `/data` is mounted read-write, and `docs/evidence/show-v94-live.png` shows the linked screen. Physical tap and fixture checks remain in `TODO.md`.

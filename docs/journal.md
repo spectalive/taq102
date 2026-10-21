@@ -1782,3 +1782,22 @@ and the expected desk map hash. The runtime log moved through connection
 retries to `link ready (linked)` with controls enabled. The previous v96 image
 remains on disk for recovery. A visual check on the physical tablet during a
 deliberate weak Wi-Fi reconnect remains open.
+
+## 2026-10-21 — Qt Quick desk feasibility trial
+
+Built Qt 6.9.1 Base and Declarative with EGLFS for the tablet in the local
+Buildroot environment. A throwaway Qt Quick screen rendered at the native
+1024x600 resolution, received physical touch input, and exposed the existing
+desk's mode, effect and haze icon vocabulary plus the one-BPM adjustment
+controls. The first frame took about 1.0-1.4 seconds; the interactive process
+used about 45 MB of resident memory, compared with about 11 MB for the current
+C desk. The compressed Qt runtime bundle was about 36 MB. This trial did not
+connect to QLC+ or send DMX commands.
+
+The owner preferred the established C desk interface after seeing and using
+the prototype. The trial therefore does not change the product or its build
+configuration. The existing desk supervisor was restarted on the tablet and
+logged `link ready (linked)` again. The temporary Buildroot configuration was
+restored and its trial build output cleaned; its pretrial images and config
+were preserved separately before cleanup. No Qt files were added to the
+production image or repository.

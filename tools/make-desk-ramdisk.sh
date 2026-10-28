@@ -2,7 +2,7 @@
 # Usage: tools/make-desk-ramdisk.sh <base.cpio.gz> <out.cpio.gz>
 # Inject the desk into an existing mainline ramdisk; refuse to overwrite output.
 # Build output/dmxdesk if absent (run tools/build-dmxdesk.sh first to refresh an
-# existing binary). Keep the base archive byte-for-byte, append a root-owned
+# existing binary), or take DMXDESK_BIN. Keep the base archive byte-for-byte, append a root-owned
 # newc overlay, then gzip the combined archives in ONE stream. This preserves
 # every unrelated file, mode, symlink, device node, module and the diagnostic
 # /init. No extraction or privileged filesystem writes are needed on the host.
@@ -14,7 +14,11 @@ out=${2:?usage: make-desk-ramdisk.sh <base.cpio.gz> <out.cpio.gz>}
 [ "$#" -eq 2 ] || { echo "expected exactly two arguments" >&2; exit 1; }
 [ -f "$base" ] || { echo "base ramdisk is missing: $base" >&2; exit 1; }
 [ ! -e "$out" ] && [ ! -L "$out" ] || { echo "refusing to overwrite $out" >&2; exit 1; }
-[ -f "$here/output/dmxdesk" ] || "$here/tools/build-dmxdesk.sh"
+# DMXDESK_BIN names another build (a local checkout's, say) without
+# replacing output/dmxdesk, the pinned release's.
+bin=${DMXDESK_BIN:-$here/output/dmxdesk}
+[ -n "${DMXDESK_BIN:-}" ] || [ -f "$bin" ] || "$here/tools/build-dmxdesk.sh"
+[ -f "$bin" ] || { echo "desk executable is missing: $bin" >&2; exit 1; }
 # The map and its provenance come from the same dmxdesk checkout as the build.
 dmxdesk=${DMXDESK_DIR:-$("$here/tools/get-dmxdesk.sh")}
 mkdir -p "$here/output"
@@ -22,7 +26,7 @@ work=$(mktemp -d "$here/output/desk-ramdisk.XXXXXX")
 trap 'rm -rf "$work"' EXIT
 trap 'exit 1' HUP INT TERM
 mkdir -p "$work/payload/usr/bin" "$work/payload/usr/sbin" "$work/payload/usr/share/dmxdesk"
-cp "$here/output/dmxdesk" "$work/payload/usr/bin/dmxdesk"
+cp "$bin" "$work/payload/usr/bin/dmxdesk"
 cp "$here/br2-external/package/dmxdesk/taq102-desk" "$work/payload/usr/bin/taq102-desk"
 cp "$here/br2-external/board/taq102/rootfs-overlay/usr/bin/taq102-app" "$work/payload/usr/bin/taq102-app"
 # The base rootfs predates the saved-MAC fix (ef53dfd); the later entry wins.

@@ -1854,3 +1854,26 @@ The owner preferred the earlier compact layout of the six Directo hold pads.
 Their Qt face now puts the mark beside the name, leaves MANTENER as a quiet
 footer, and gives fog holds a teal field. A second bounded tablet capture
 showed this revision; the C desk and its QLC+ connection returned afterward.
+
+## 2026-10-28 — local v98 desk image from dmxdesk main
+
+dmxdesk's core/platform split (2026-10-27) moved the source list to
+`dmxdesk.sources` at the repository root with paths and the headers to
+`core/` and `platform/linux-fb/`. `tools/build-dmxdesk.sh` and the Buildroot
+`dmxdesk.mk` now accept both layouts, and `dmxdesk.mk` also builds from a
+checkout given as `DMXDESK_OVERRIDE_SRCDIR` (cJSON copied after the rsync,
+the checkout's `output/` excluded). The pinned v0.1.10 rebuilt by the script
+is byte-identical to the executable v97 shipped (`d68f4720…`), so the pinned
+build is unchanged. `tools/make-desk-ramdisk.sh` takes `DMXDESK_BIN` to inject
+another executable without replacing `output/dmxdesk`.
+
+With dmxdesk `main` at `ecdeb7a` (unreleased), the script cross-built the desk
+under `-Werror` with Buildroot's GCC 14.3.0, and the v97 recipe gave
+`rootfs-v98-local-desk.cpio.gz` and `recovery-taq102-v98-local-desk.img`
+(SHA256 `f46150b15f80dbd118d8291c637d6e5d12851571c84e720ed9ab742a5a8f507e`).
+The ramdisk's overlay VERSION names `ecdeb7a`, clean, and its executable
+matches the local build (`71c6e548…`). Nothing was flashed; the owner reviews
+the desk first. A full `taq102_mainline_defconfig` build was not run:
+`/work/output-mainline` holds no toolchain, and starting one from scratch was
+stopped after ten minutes in host-cmake.
+

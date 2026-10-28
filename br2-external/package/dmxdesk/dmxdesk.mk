@@ -22,12 +22,27 @@ define DMXDESK_COPY_CJSON
 	cp $(DMXDESK_DL_DIR)/cJSON.c $(@D)/
 endef
 DMXDESK_POST_EXTRACT_HOOKS += DMXDESK_COPY_CJSON
+# A checkout given as DMXDESK_OVERRIDE_SRCDIR is rsynced, not extracted: it
+# needs the same cJSON, from the download cache of an earlier build.
+DMXDESK_POST_RSYNC_HOOKS += DMXDESK_COPY_CJSON
+# The checkout's own output/ holds host builds and captures, not sources.
+DMXDESK_OVERRIDE_SRCDIR_RSYNC_EXCLUSIONS = --exclude output
 
+# Releases up to v0.1.10 keep everything in src/ with a bare source list;
+# from the core/platform split (2026-10-27) the list is dmxdesk.sources at the
+# root with paths, and the headers sit in core/ and platform/linux-fb/.
 define DMXDESK_BUILD_CMDS
 	$(TARGET_CC) $(TARGET_CFLAGS) -O2 -w -c $(@D)/cJSON.c -I$(@D)/include/cjson -o $(@D)/cJSON.o
+	if [ -f $(@D)/dmxdesk.sources ]; then \
+		inc="-I$(@D)/core -I$(@D)/platform/linux-fb"; \
+		srcs=`sed 's|^|$(@D)/|' $(@D)/dmxdesk.sources`; \
+	else \
+		inc="-I$(@D)/src"; \
+		srcs=`sed 's|^|$(@D)/src/|' $(@D)/src/dmxdesk.sources`; \
+	fi; \
 	$(TARGET_CC) $(TARGET_CFLAGS) -std=gnu99 -Wall -Wextra -Werror -O2 \
-		-I$(@D)/src -I$(@D)/include -I$(STAGING_DIR)/usr/include/libdrm \
-		-o $(@D)/dmxdesk $(addprefix $(@D)/src/,$(shell cat $(@D)/src/dmxdesk.sources)) \
+		$$inc -I$(@D)/include -I$(STAGING_DIR)/usr/include/libdrm \
+		-o $(@D)/dmxdesk $$srcs \
 		$(@D)/cJSON.o $(TARGET_LDFLAGS) -ldrm -lm -pthread
 endef
 

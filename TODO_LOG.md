@@ -6,6 +6,11 @@
 
 ## 2026
 
+### 2026-11
+
+- [-] 2026-11-03 — **Pending decisions:** **Decide whether to flash the local v98 desk image.** On 2026-10-28 `recovery-taq102-v98-local-desk.img` (SHA256 `f46150b15f80dbd118d8291c637d6e5d12851571c84e720ed9ab742a5a8f507e`, in the gate3-build folder) was built by the v97 recipe from the v87 base with dmxdesk `main` at `ecdeb7a`, not a release: the core/platform split, the generic OSC adapter, split sections named in the pager, and the centred colour-hit bolt with a narrower GOLPES DE COLOR switch. Its VERSION names `ecdeb7a`, clean; its desk executable SHA256 starts `71c6e54806c845e2`. Nothing was flashed. Next: the owner reviews the desk on the Mac, then either a dmxdesk release (v0.1.11) is cut and pinned here, or this image is flashed as a trial with `tools/loader-watch.sh recovery <image>`.
+  - Resolution: Superseded by dmxdesk v0.1.11 and the v99 image (recovery-taq102-v99-desk.img, SHA256 0a02be0d...), flashed to boot and recovery on 2026-11-03 with both readbacks matching; see docs/journal.md.
+
 ### 2026-10
 
 - [x] 2026-10-21 — **DMX desk (Phase A):** Confirm the restored C desk reconnects to the intended QLC+ master.

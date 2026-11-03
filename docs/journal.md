@@ -1877,3 +1877,22 @@ the desk first. A full `taq102_mainline_defconfig` build was not run:
 `/work/output-mainline` holds no toolchain, and starting one from scratch was
 stopped after ten minutes in host-cmake.
 
+
+## 2026-11-03 — v99 desk image with dmxdesk v0.1.11, flashed
+
+Pinned dmxdesk v0.1.11 (`d50fa83`; archive SHA256 `3b3158de…`, computed the
+same way as v0.1.10's, which reproduced). `tools/build-dmxdesk.sh` cross-built
+it (executable `5880df1a…`), and the v97 recipe, from the v87 base with the
+`zImage-7.3.0-rc2-v86-pci-only-0301` kernel and `second-v88-logo-palette`
+(both byte-identical to the segments inside v97), gave `rootfs-v99-desk.cpio.gz`
+and `recovery-taq102-v99-desk.img` (SHA256
+`0a02be0d8e958e5e51f132e000ab91ca5c1c0bd57cb1acb746aa251409cccaa5`). The
+overlay VERSION names `d50fa83`, clean, the `Vibra.qxw` the mini loads
+(`614344a4…`) and the map `1192f207…`, byte-identical to vibra-lighting's
+`Vibra.desk.json`. With the owner present, `reboot-loader` over SSH, then
+`tools/flash-recovery.sh --no-bcb` and `tools/flash-boot.sh` wrote it to
+`recovery` and `boot`; both readbacks matched. The BCB stays zeroed, so the
+tablet boots `boot`. It came back on the network within a minute running the
+same executable and map, and the desk logged `link ready (linked)` and
+`158 of 152 controls enabled against the master's console`. v97 stays on disk
+for recovery.

@@ -1926,3 +1926,16 @@ single-core v99. The board DTS now deletes rk3128.dtsi's enable-method and
 adds the vendor tree's `psci` node, and the kernel config drops `nosmp`; the
 VM tree builds the tested DTB, and its zImage is the SMP one (`083febb5…`).
 The cores still run at 600 MHz.
+
+## 2026-11-03 — v101: four cores, Mali at 297 MHz, restart off PSCI
+
+The `arm,psci-1.0` trial image hung on its first `reboot-loader`; with a 0.2+
+node the kernel restarts and powers off through PSCI (priority 129, above the
+CRU's 128), and this firmware reports PSCI v65535.65535. v101 declares
+`arm,psci` (v0.1) with only CPU_ON and CPU_OFF and fixes the Mali at 297 MHz
+with `assigned-clock-rates`. It went to `boot` from the running system (raw
+`dd`, readback `869e84eb…`), started by the CRU global reset, which skips PSCI.
+Three plain reboots and one `reboot-loader` with `rkdeveloptool rd` all came
+back with four cores and the Mali at 297 MHz. Measured at runtime before, four
+cores with the Mali at 297 MHz took the Qt drive from 124-125 to 146-149
+frames and its median frame from 35 to 27-28 ms. `recovery` keeps v99.

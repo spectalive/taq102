@@ -1896,3 +1896,20 @@ tablet boots `boot`. It came back on the network within a minute running the
 same executable and map, and the desk logged `link ready (linked)` and
 `158 of 152 controls enabled against the master's console`. v97 stays on disk
 for recovery.
+
+## 2026-11-03 — SMP trial images, and why the first trial proved nothing
+
+The 2026-11-02 SMP trial (`taq102-v97-smp.img`, hung black) carried a
+truncated kernel: 9797632 of the 10331200 bytes its zImage header declares,
+a gzip stream that never ends. The whole kernel (`~/zImage.smp` in the VM)
+decompresses to the same 26986572 bytes as v86, without `nosmp`. So the hang
+says nothing about SMP or its enable-method. `tools/make-recovery.sh` now runs
+`tools/check-zimage.py`, which refuses a zImage whose length disagrees with
+its header; fed the truncated kernel it stops before packing.
+
+Prepared, not flashed: `boot-taq102-v99-smp-psci-trial.img`, the v99 ramdisk
+with the whole SMP kernel and a `second` whose DTB is v88's with the
+`rockchip,rk3036-smp` enable-method removed and the vendor tree's
+`psci { compatible = "arm,psci-1.0"; method = "smc"; }` added; and
+`boot-taq102-v99-smp-rk3036-trial.img`, the same kernel with v88's unchanged
+`second`. Hashes and the procedure are in `TODO.md`.

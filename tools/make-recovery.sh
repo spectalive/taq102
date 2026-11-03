@@ -14,10 +14,14 @@ MKBOOTIMG=${MKBOOTIMG:?set MKBOOTIMG to the path of mkbootimg.py}
 
 RAMDISK=${1:?usage: make-recovery.sh <rootfs.cpio.gz> <out.img>}
 OUT=${2:?usage: make-recovery.sh <rootfs.cpio.gz> <out.img>}
+KERNEL=${KERNEL:-$ARCHIVE/gate3-build/kernel}
+
+# A truncated zImage packs and flashes without complaint, then hangs black.
+python3 "$(dirname "$0")/check-zimage.py" "$KERNEL"
 
 python3 "$MKBOOTIMG" \
     --header_version 0 --os_version 8.1.0 --os_patch_level 2019-06 \
-    --kernel "${KERNEL:-$ARCHIVE/gate3-build/kernel}" \
+    --kernel "$KERNEL" \
     --ramdisk "$RAMDISK" \
     --second "${SECOND:-$ARCHIVE/gate3-build/second}" \
     --pagesize 0x00000800 --base 0x00000000 \

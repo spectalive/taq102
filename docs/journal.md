@@ -1913,3 +1913,16 @@ with the whole SMP kernel and a `second` whose DTB is v88's with the
 `psci { compatible = "arm,psci-1.0"; method = "smc"; }` added; and
 `boot-taq102-v99-smp-rk3036-trial.img`, the same kernel with v88's unchanged
 `second`. Hashes and the procedure are in `TODO.md`.
+
+## 2026-11-03 — four cores on mainline through PSCI
+
+`boot-taq102-v99-smp-psci-trial.img` went to `boot` (readback matched) and
+booted in about 8 s: PSCI v0.2 function IDs over smc, `smp: Brought up 1
+node, 4 CPUs`, the desk linked and Wi-Fi associated. Three minutes with all
+four cores busy changed nothing in dmesg. The Qt desk's tab-switch drive went
+from 113-115 to 124-125 frames, p90 frame from 46-47 to 40-41 ms and p90 sync
+from 10 to 5-6 ms; the median frame stays at 35 ms. `recovery` keeps
+single-core v99. The board DTS now deletes rk3128.dtsi's enable-method and
+adds the vendor tree's `psci` node, and the kernel config drops `nosmp`; the
+VM tree builds the tested DTB, and its zImage is the SMP one (`083febb5…`).
+The cores still run at 600 MHz.

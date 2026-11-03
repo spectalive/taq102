@@ -25,6 +25,21 @@
 	compatible = "denver,taq102", "rockchip,rk3126";
 
 	/*
+	 * The secondary cores come up through the trust firmware, as in the
+	 * vendor tree, not by rk3128.dtsi's rockchip,rk3036-smp, which pokes
+	 * registers the firmware owns. Booted all four cores on 2026-11-03
+	 * (PSCI v0.2 function IDs over smc).
+	 */
+	cpus {
+		/delete-property/ enable-method;
+	};
+
+	psci {
+		compatible = "arm,psci-1.0";
+		method = "smc";
+	};
+
+	/*
 	 * A crash log that survives the reboot, because this board has no console
 	 * a failed boot can reach: no serial pads, and the USB gadget is raised by
 	 * userspace the kernel never gets to. Deliberately NOT 0x68000000, which

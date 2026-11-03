@@ -29,14 +29,22 @@
 	 * vendor tree, not by rk3128.dtsi's rockchip,rk3036-smp, which pokes
 	 * registers the firmware owns. Booted all four cores on 2026-11-03
 	 * (PSCI v0.2 function IDs over smc).
+	 *
+	 * Declared as v0.1 with only CPU_ON and CPU_OFF, not as the vendor's
+	 * "arm,psci-1.0": a 0.2+ node also makes PSCI the restart handler
+	 * (priority 129, above the CRU's 128) and pm_power_off, and this
+	 * firmware reports version 65535.65535. With "arm,psci-1.0" the first
+	 * reboot-loader on 2026-11-03 never reached loader mode or the network.
 	 */
 	cpus {
 		/delete-property/ enable-method;
 	};
 
 	psci {
-		compatible = "arm,psci-1.0";
+		compatible = "arm,psci";
 		method = "smc";
+		cpu_off = <0x84000002>;
+		cpu_on = <0x84000003>;
 	};
 
 	/*
@@ -477,4 +485,12 @@
 	 * once the RK816 regulators exist here and vdd_logic is its supply.
 	 */
 	/delete-property/ operating-points-v2;
+	/*
+	 * One fixed rate instead: 297 MHz (gpll / 2). The vendor table runs
+	 * 300 MHz at 1.05 V and vdd_logic reads 1.1 V (RK816 BUCK2 VSEL 0x1f),
+	 * so it needs no regulator control. Set at runtime on 2026-11-03 with
+	 * four cores up, it took the Qt desk's median frame from 35 to 26 ms.
+	 */
+	assigned-clocks = <&cru ACLK_GPU>;
+	assigned-clock-rates = <297000000>;
 };

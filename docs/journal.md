@@ -1953,3 +1953,40 @@ Qt measurement had vdd_arm raised to 1.2 V by hand. The built image
 never flashed and the DTS change is reverted; the CPU waits for the RK816
 regulators and cpufreq-dt. Mainline rk3128 has no tsadc node, so nothing
 throttles either. The tablet keeps v101 in `boot` and v99 in `recovery`.
+
+## 2026-11-04 — v103 (RK816 rails, cpufreq, GPU devfreq, Qt desk default) does not come back
+
+The owner asked for the Qt desk as the boot default and for the whole SoC.
+v103 put both into one image: the board DTS described RK816 DCDC1 (`vdd_arm`,
+1.0-1.45 V) and DCDC2 (`vdd_logic`, 1.1-1.25 V, the floor kept for the DDR the
+bootloader runs at 300 MHz on 1.1 V) with the ramp register written to
+3 mV/us, gave `cpu0` its `cpu-supply` and the vendor tree's highest-leakage
+voltages (600/696 MHz 1.15 V, 816 MHz 1.2 V, 1008 MHz 1.325 V, 1200 MHz
+1.425 V), and gave the Mali `mali-supply` with the vendor GPU table lifted to
+the 1.1 V floor. The kernel enabled cpufreq-dt with schedutil as the default
+governor, and `cpufreq-dt-platdev` gained `rockchip,rk3126` and
+`rockchip,rk3128`, which mainline does not list. The ramdisk was the v87 base
+with dmxdesk v0.1.11, `qt-desk` (`9cb13018…`, the binary the trial ran), the
+QML at dmxdesk `b82128e`, a `taq102-qt-desk` launcher that takes the Qt runtime
+from `/data/qt-runtime`, and `taq102-app` choosing Qt, then the C desk, then
+the cube.
+
+`boot-taq102-v103-qt-cpufreq.img` (`6e7833e0…`) went to `boot` from the running
+v101 (`dd` at LBA 139264, readback matched), `recovery` keeping v99, and a
+plain `reboot` never brought it back on the network. Nine minutes later the
+owner power-cycled it and tried the two-button loader entry twice; the Mac mini
+saw no USB device in any mode. Not known yet: what the panel showed, and
+whether the kernel, the regulators, devfreq or the ramdisk is at fault.
+
+On the way, `orb ... cat` of the 10 MB zImage out of the VM silently truncated
+it (9699328 of 10359480 bytes) and `check-zimage.py` refused it; copying
+through `/mnt/mac` from inside the VM gave the whole file. That is the same
+failure as the 2026-11-02 SMP trial, so never pipe build outputs out of `orb`.
+
+Prepared, not flashed: `boot-taq102-v104a-cpufreq-userspace.img`
+(`aa8de52b…`), which separates the causes. Same ramdisk; the GPU back to v101's
+fixed 297 MHz with no `mali-supply`; the ramp register left alone, with 250 us
+of settling after every rise instead (the full swing at the slowest 2 mV/us);
+and `userspace` as the default governor, so the CPU stays at the bootloader's
+600 MHz until a test sets it. `/data/taq102-use-c-desk` makes the new
+`taq102-app` keep the C desk, so the first boot can test the kernel alone.

@@ -88,7 +88,8 @@ int main(void) {
 
     char old_dir[256]; snprintf(old_dir, sizeof old_dir, "%s/existing", dir);
     assert(mkdir(old_dir, 0755) == 0);
-    char marker[256]; snprintf(marker, sizeof marker, "%s/marker", old_dir);
+    char marker[256];
+    assert(snprintf(marker, sizeof marker, "%s/marker", old_dir) < (int)sizeof marker);
     write_text(marker, "old file remains\n");
     assert(settings_save(&s, old_dir) == -1);
     assert_text(marker, "old file remains\n");

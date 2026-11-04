@@ -291,12 +291,6 @@ appliance back. The journal is `docs/journal.md`.
   Blocked: needs the tablet unplugged and the power button held by hand; RK816 shutdown path in the kernel to read first.
 ## Infrastructure and tooling
 
-- [ ] Two control-centre host tests do not build on Linux: GCC 15 (OrbStack
-  `taq102`, -Werror) rejects `snprintf` into 256-byte paths with
-  -Wformat-truncation in `tests/control-centre/backlight_test.c:25` and
-  `settings_test.c:91`; macOS clang passes all 19 (2026-10-19, 17/19 on
-  Linux). Smallest action: size those buffers for the joined path (or check
-  the return), then rerun `tools/test-control-centre-host.sh` in the VM.
 - [ ] Mainline `u_serial` warns in `gs_close()` when the host vanishes with
   the ACM console open (seen when the Mac rebooted). Harmless; a report for
   the gadget list some day.

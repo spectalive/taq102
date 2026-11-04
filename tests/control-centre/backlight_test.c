@@ -19,10 +19,11 @@ int main(void) {
     char root[] = "/tmp/taq102-audit/backlight-XXXXXX";
     char panel[256], max_path[256], brightness_path[256];
     assert(mkdtemp(root) != NULL);
-    snprintf(panel, sizeof panel, "%s/panel", root);
+    assert(snprintf(panel, sizeof panel, "%s/panel", root) < (int)sizeof panel);
     assert(mkdir(panel, 0700) == 0);
-    snprintf(max_path, sizeof max_path, "%s/max_brightness", panel);
-    snprintf(brightness_path, sizeof brightness_path, "%s/brightness", panel);
+    assert(snprintf(max_path, sizeof max_path, "%s/max_brightness", panel) < (int)sizeof max_path);
+    assert(snprintf(brightness_path, sizeof brightness_path, "%s/brightness", panel)
+           < (int)sizeof brightness_path);
     assert(backlight_open_at(&backlight, root) == -1);
     write_value(max_path, "bad\n");
     assert(backlight_open_at(&backlight, root) == -1);

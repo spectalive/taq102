@@ -1939,3 +1939,17 @@ Three plain reboots and one `reboot-loader` with `rkdeveloptool rd` all came
 back with four cores and the Mali at 297 MHz. Measured at runtime before, four
 cores with the Mali at 297 MHz took the Qt drive from 124-125 to 146-149
 frames and its median frame from 35 to 27-28 ms. `recovery` keeps v99.
+
+## 2026-11-04 — 816 MHz at 1.1 V computes wrong
+
+rk3128.dtsi's OPP table runs 816 MHz at 1.075 V, and vdd_arm reads 1.1 V, so
+an `assigned-clock-rates` of 816 MHz on ARMCLK (through `&cru`; CPU nodes are
+not devices) looked as safe as the Mali's fixed 297 MHz. A ten-minute soak at
+runtime said otherwise: four workers md5summing a 24 MB tmpfs blob against a
+reference gave 2 wrong sums in 4356 runs at 816 MHz, and 0 in 3352 at 600 MHz.
+The vendor's 1.2 V at 816 MHz is the real requirement, and the earlier 816 MHz
+Qt measurement had vdd_arm raised to 1.2 V by hand. The built image
+(`boot-taq102-v102-smp-cpu816-UNSTABLE-do-not-flash.img`, `b829c1ee…`) was
+never flashed and the DTS change is reverted; the CPU waits for the RK816
+regulators and cpufreq-dt. Mainline rk3128 has no tsadc node, so nothing
+throttles either. The tablet keeps v101 in `boot` and v99 in `recovery`.

@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-bb3eec7e-ad1d-4345-92b7-a1b178ea6c60",
+  "title": "Linux 7.3.0-rc2 boots on the tablet (v59):",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "RK816 battery, eMMC and /data, rtw88 with a DHCP lease, USB ACM console.",
+    "Evidence: `docs/evidence/2026-09-08-mainline/`."
+  ],
+  "closed": "2026-09-08",
+  "result": "Linux 7.3.0-rc2 boots on the tablet (v59):",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

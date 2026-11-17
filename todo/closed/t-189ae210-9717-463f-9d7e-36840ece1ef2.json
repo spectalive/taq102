@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-189ae210-9717-463f-9d7e-36840ece1ef2",
+  "title": "Gestures: arcball rotation with quaternion",
+  "state": "done",
+  "category": "frontend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "momentum, 1€ filter, two-finger zoom, drag and twist; four multitouch bugs",
+    "from trusting slot state."
+  ],
+  "closed": "2026-09-02",
+  "result": "Gestures: arcball rotation with quaternion",
+  "evidence": [
+    "commit `4a77073`; `src/arcball.c`, `src/oneeuro.c`; README \"The gestures, and the four ways they were wrong\"."
+  ]
+}

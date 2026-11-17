@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-f77ca14b-63a7-4801-acc2-df8a9debff62",
+  "title": "2026-09-10 - **Panel: package fliptest and correct the flicker metric.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`7c1bac5` adds fliptest to the five compiled diagnostics; v80 carries it.",
+    "`tools/panel-camera/flicker.py` now separates fixed spatial banding from",
+    "variation between frames. The measured moving component is 0.1-0.4% of",
+    "mean, comparable to the bezel, with no distinction between static, every",
+    "vblank and 100 ms flips; the backlight sweep showed no PWM signature.",
+    "Evidence: the commit and `docs/evidence/2026-09-10-panel/README.md`.",
+    "These clean-state measurements do not close the later intermittent shimmer."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-10 - **Panel: package fliptest and correct the flicker metric.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

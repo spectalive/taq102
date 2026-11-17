@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-12d309d5-22be-4484-8b9f-f74a7d236e85",
+  "title": "Finish protocol/output qualification against the generated Vibra map,",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`show/vibra.desk.json`: room states, family picks, grand master w246,",
+    "PARAR TODO w21 and dials w34/w274. Solo handoff and reconnect have recorded",
+    "bench evidence (`docs/evidence/2026-09-12-desk-phase1/handoff.txt`); finite",
+    "starts/stops have `docs/evidence/2026-09-13-desk-bursts/`. Next: measure",
+    "burst deadlines and colour/shutter priority at actual DMX output in the",
+    "hands-on rig session. Position and attribute takeover remain separate",
+    "experiments against this show's own widget and function ids."
+  ]
+}

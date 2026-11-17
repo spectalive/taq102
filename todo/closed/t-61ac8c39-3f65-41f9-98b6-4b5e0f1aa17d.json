@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-61ac8c39-3f65-41f9-98b6-4b5e0f1aa17d",
+  "title": "`DMX-Fixtures` has no `docs/` in its tip, although the brain page",
+  "state": "done",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "describes five documents there (`qxw-format.md`, `rig.md`,",
+    "`show-operation.md`, `qlcplus-environment.md`, `toolkit.md`). Find out",
+    "whether that work was ever committed, and fix either the repo or the page."
+  ],
+  "closed": "2026-10-19",
+  "result": "Nothing was lost: rig.md and show-operation.md are in Vibra-Lab/vibra-lighting docs/ (the renamed DMX-Fixtures); qxw-format.md, qlcplus-environment.md and toolkit.md moved to spectalive/qlctool docs/ with the toolkit. The brain page vibra-dmx.md now says so (wiki 16e0a1909).",
+  "evidence": [
+    "git ls-tree --name-only origin/main docs/ lists docs/rig.md and docs/show-operation.md in vibra-lighting, and docs/qxw-format.md, docs/qlcplus-environment.md, docs/toolkit.md in qlctool."
+  ]
+}

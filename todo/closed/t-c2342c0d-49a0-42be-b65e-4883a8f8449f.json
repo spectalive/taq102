@@ -1,0 +1,35 @@
+{
+  "tadu": 2,
+  "id": "t-c2342c0d-49a0-42be-b65e-4883a8f8449f",
+  "title": "2026-09-10 - **Mainline:** the tablet discharged with the cable in,",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "reporting `Charging` while `current_now` was -301 mA. The RK816's input limit",
+    "sat at 450 mA because the charger driver takes that when the USB PHY's BC1.2",
+    "detection reports neither SDP, CDP nor DCP -- and on this board it reports",
+    "every cable as zero, `USB` included. The initial patch 0008 attempt used",
+    "the board's DCP limit for an unknown port; the review below rejected that",
+    "inference and the final policy keeps the driver conservative. From a",
+    "clean boot on v85, brightness 255 with the cube running: +584 mA and the",
+    "battery climbing, against -259 mA before. Measured along the way: the",
+    "backlight costs about 300 mA and the cube 50 to 90.",
+    "The first attempt made the driver guess -- it took the board's declared limit",
+    "whenever detection said nothing -- and a the reviewer review rejected it: the binding",
+    "defines that property as a dedicated charging port's maximum, and the branch",
+    "also fired on an ordinary disconnect. The shipped fix instead holds an",
+    "unclassified port to 450 mA and gives the usb supply a writable",
+    "`input_current_limit`, which the appliance's `init` raises because it knows",
+    "what it is plugged into. Two defects in the existing helper went with it: a",
+    "request between 81 and 449 mA rounded up to 450, and the register write's",
+    "error was discarded. Evidence, including the review:",
+    "`docs/evidence/2026-09-10-charging/`."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-10 - **Mainline:** the tablet discharged with the cable in,",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

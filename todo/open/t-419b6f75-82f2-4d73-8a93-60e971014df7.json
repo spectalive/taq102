@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-419b6f75-82f2-4d73-8a93-60e971014df7",
+  "title": "Qualify the finite fog bursts with the rig. All 25 hits,",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "including HUMO YA and HUMO VERT, ship in `show/vibra.desk.json` with",
+    "controller-side Flash maximum holds; the five-second fog limit reached the",
+    "v96 tablet and the Mac mini's modified QLC+ runtime on 2026-10-21. The former",
+    "requirement to implement a finite fog cue is complete. Still owed: observe",
+    "physical DMX output reaching zero by the deadline with the client killed",
+    "and Wi-Fi pulled during ON. Next: the hands-on rig session below; do not",
+    "substitute a websocket echo for output measurement."
+  ]
+}

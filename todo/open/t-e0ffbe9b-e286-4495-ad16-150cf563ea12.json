@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-e0ffbe9b-e286-4495-ad16-150cf563ea12",
+  "title": "`rtw88_8723cs: failed to get tx report from firmware`, 11 times in an",
+  "state": "pending",
+  "category": "future-ideas",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "8 hour soak (2026-09-10, v85), roughly every 10 to 60 minutes and never in",
+    "bursts. The link stayed associated throughout, so it costs nothing visible;",
+    "worth understanding before the driver work is called finished."
+  ]
+}

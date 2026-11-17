@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-463b36ce-814a-4c6a-b8a8-57804626cf2f",
+  "title": "Hardware identified and backed up; route",
+  "state": "done",
+  "category": "documentation",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "settled."
+  ],
+  "closed": "2026-09-01",
+  "result": "RK3126C on a BND-RK3126C-D708 board, Android 8.1, kernel 4.4.103, GSL3673, RK816, RTL8723CS; full eMMC image and 16 partition dumps, sha256-verified; GSL3673 firmware extracted from the stock kernel. Route: keep the stock boot chain, replace only the recovery ramdisk with a Buildroot userspace (the reviewer, two rounds).",
+  "evidence": [
+    "the archive disk and `research/FINDINGS.md`; the knowledge base."
+  ]
+}

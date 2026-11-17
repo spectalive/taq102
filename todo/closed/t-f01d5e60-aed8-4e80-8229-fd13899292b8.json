@@ -1,0 +1,22 @@
+{
+  "tadu": 2,
+  "id": "t-f01d5e60-aed8-4e80-8229-fd13899292b8",
+  "title": "2026-09-13 - **Desk: host and VM verification gate unblocked.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "The earlier 27 PASS / 6 FAIL socket-restricted run and VM startup timeout",
+    "remain historical evidence in `output/desk-fixes/`; they no longer block",
+    "this gate. The completed pager-edge verification above records the",
+    "unrestricted host suite at 38 passed / 0 failed, a clean GCC 14.3.0 ARM",
+    "cross-build with `-Wall -Wextra -Werror`, and matching deployment hashes.",
+    "Persistent appliance packaging and physical DMX qualification remain open."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Desk: host and VM verification gate unblocked.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

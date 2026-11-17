@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-686f8484-81bc-40bd-9c6d-a26cc9f67d69",
+  "title": "Bind validation to the workspace the master actually loaded. The show",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "repository already generates the manifest/map; `src/showmap.c` reads its",
+    "`show.sha256`, but no runtime code compares it against the master's loaded",
+    "workspace. Matching widget ids cannot prove matching channel outputs or",
+    "dependencies. Next: define an authoritative loaded-workspace identity from",
+    "the master and reject a mismatched map before enabling controls; add a",
+    "same-ids/different-workspace regression once that source is established."
+  ]
+}

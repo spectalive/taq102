@@ -1,0 +1,26 @@
+{
+  "tadu": 2,
+  "id": "t-6ac6250a-9695-4a5b-a36f-c9f4707ef661",
+  "title": "2026-09-12 - **Panel: retain state before the next shimmer.** `a331d8e`",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "adds `panel-trap`, logging PHY/VOP clocks, rails, charging, battery, load,",
+    "drawing app and kernel lines to `/data/panel-trap.log` once a minute;",
+    "`58f8df4` adds regmap-derived VBUS alongside USB_CTRL. The latter records",
+    "4.44 V while draining and +666 mA after changing the limiter threshold,",
+    "but the cause/rearm policy remains open. `fliptest vlines`, forced desk",
+    "flips and the flip counter were used in the clean-state A/B. The third",
+    "shimmer cleared before those comparisons, so they do not diagnose it.",
+    "Evidence: both commits, `br2-external/package/taq102-diag/panel-trap` and",
+    "the remaining panel/charging items in TODO.md. Automatic startup was not",
+    "delivered with this instrumentation."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-12 - **Panel: retain state before the next shimmer.** `a331d8e`",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

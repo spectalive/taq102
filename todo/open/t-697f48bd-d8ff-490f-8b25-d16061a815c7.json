@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-697f48bd-d8ff-490f-8b25-d16061a815c7",
+  "title": "Three of the tablet's USB gadget resets on 2026-09-12 (`dwc2: new",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "device` at uptime 51602, 64162, ~65830) lined up with three QLC+ launches on",
+    "the Mac, whose DMX USB plugin walks every USB device with libusb. A fourth",
+    "launch at 66900, watched on purpose, reset nothing. So it is a correlation",
+    "from three points, not a mechanism; keep it in mind, do not build on it."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-807051d3-90c3-4350-ba5f-22a9494166d2",
+  "title": "Put the touch panel's `screen_max_x/y` in the",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "hybrid device tree."
+  ],
+  "closed": "2026-09-07",
+  "resolution": "the GSL3673 driver never reads them (only compile-time `SCREEN_MAX_*` variants in `gsl3673.h`); the 2048x1536 range is the driver's, and `src/touch_flip.c` mapping by the KMS mode is the fix."
+}

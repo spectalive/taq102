@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-b6fbc83e-7d81-401a-9e4d-0dc87e233ecf",
+  "title": "Joining a different Wi-Fi network from the panel needs an on-screen",
+  "state": "pending",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "keyboard (deferred in the spec); today the network is set in",
+    "`/data/wifi.conf` over ssh."
+  ]
+}

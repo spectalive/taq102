@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-ca71a366-7498-4dff-9030-4ddb737fd26e",
+  "title": "Replace the `fw_devlink=off` workaround with a real fix. The one-line",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "candidate, `GENPD_FLAG_NO_SYNC_STATE` on the Rockchip power domains, was",
+    "tried in v63 with the display stack built in and the boot still hangs before",
+    "userspace (2026-09-09), so the mechanism is not fully understood. Needs a",
+    "trace from a built-in boot: an early printk of the blocked task onto the",
+    "bootloader framebuffer is the channel that would survive it."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tadu": 2,
+  "id": "t-53865593-985c-4caa-bb0c-3b5942e58543",
+  "title": "\"The own-built 4.4.167 kernel never boots.\"",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-03",
+  "resolution": "it always did; the non-boot was the malformed resource blob and the missing console."
+}

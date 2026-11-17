@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-effd173c-9910-4693-9c6b-baf6e7b33972",
+  "title": "Blackout has no route yet. QLC+'s own Blackout button toggles the global",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "blackout on every request and then shows whatever state the sender claimed,",
+    "so its widget state cannot stand for the rig's, and grand master at zero is",
+    "not blackout. The tile ships disabled and showing unknown until experiment 1",
+    "settles a route with an authoritative readback."
+  ]
+}

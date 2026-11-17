@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-277c3727-3b63-47d6-afc6-6b100922d373",
+  "title": "The 4.4.167 kernel builds and boots; the display",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "comes up on it."
+  ],
+  "closed": "2026-09-03",
+  "result": "`tools/build-kernel.sh` captures the seven host breakages; the non-boot was a malformed RSCE resource blob (`tools/make-resource.py` reproduces the stock image byte for byte); PHY `-19` then `-517` fixed by `CONFIG_PHY_ROCKCHIP_INNO_VIDEO_COMBO_PHY` as a module; the PWM pinctrl state must be named `active`; `tools/make-hybrid-dts.py` reproduces the tested blob. `/dev/dri/card0`, `LVDS-1` at 1024x600@56.14, glcube 54.8 FPS.",
+  "evidence": [
+    "commits `4281d04`, `9fd1b3f`, `cfd735a`, `5deda33`; `kernel/patches/0001-*`."
+  ]
+}

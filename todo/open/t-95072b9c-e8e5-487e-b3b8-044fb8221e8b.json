@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-95072b9c-e8e5-487e-b3b8-044fb8221e8b",
+  "title": "Show mode: the appliance sleeps the screen after five minutes idle, and",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "a desk waiting for the next cue is idle. Hold the screen on during a show,",
+    "give the power button a defined behaviour, and cancel every contact on a",
+    "display transition."
+  ]
+}

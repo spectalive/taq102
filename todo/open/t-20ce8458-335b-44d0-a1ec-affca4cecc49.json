@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-20ce8458-335b-44d0-a1ec-affca4cecc49",
+  "title": "Verify the heartbeat's untouched-scene acceptance on the current",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "Vibra show. The heartbeat implementation and RTT are proven: 2744 samples",
+    "over 30 minutes, p50 19 ms, p95 47 ms, max 319 ms, no drops. But",
+    "`docs/evidence/2026-09-12-desk-phase1/heartbeat-rtt-30min.log` identifies",
+    "`deluxe-eventos` with only 1 of 11 controls enabled, not a ten-minute held",
+    "Vibra scene. Next: run an enabled current-show scene untouched for ten",
+    "minutes and retain the link and scene-state log."
+  ]
+}

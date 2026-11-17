@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-a4326e07-1f37-46b7-9479-29768f769c4f",
+  "title": "The -256 dBm gate in `read_wifi` is untested against a live",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "unassociated interface: it went in after the link had already been",
+    "recovered. Check it the next time the chip comes up without associating."
+  ]
+}

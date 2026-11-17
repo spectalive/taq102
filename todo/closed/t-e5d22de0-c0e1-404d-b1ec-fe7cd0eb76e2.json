@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-e5d22de0-c0e1-404d-b1ec-fe7cd0eb76e2",
+  "title": "The shimmer was the LVDS PHY PLL's jitter; the",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "vendor divider pair fixes it (v42)."
+  ],
+  "closed": "2026-09-05",
+  "result": "`prediv 2 / fbdiv 28` = 336 MHz instead of `12 / 175` = 350 MHz; picture movement 0.005 px rms against 0.63-0.81, 0.06 from a cold boot. A stray `REGE4 = 0x80` write living only in the VM tree was removed and patch 0001 matches the tree again. The \"7x pixel clock\" rule was measured with the panel unpowered and is retired.",
+  "evidence": [
+    "commit `192cde9`; `docs/evidence/2026-09-05/vlines-*.png`; `src/testpattern.c`, `src/phytune.c`, `src/lvdsdiag.c`."
+  ]
+}

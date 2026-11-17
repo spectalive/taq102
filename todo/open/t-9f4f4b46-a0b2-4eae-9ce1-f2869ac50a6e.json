@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-9f4f4b46-a0b2-4eae-9ce1-f2869ac50a6e",
+  "title": "The desk dropped its link once in 20 minutes of idle running on 2026-09-12",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(`803 ms without a word from the master`, one line in `/tmp/dmxdesk.log`,",
+    "reconnected by itself). The 750 ms staleness threshold may simply be tighter",
+    "than this Wi-Fi, which already has its own `rtw88_8723cs: failed to get tx",
+    "report` history. Measure the heartbeat round trip over an hour before",
+    "loosening it: a threshold chosen to hide a stall is worse than a drop that",
+    "recovers."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "tadu": 2,
+  "id": "t-85be25a6-0b32-4884-bd1b-fdcac7e33f37",
+  "title": "2026-09-11 - **Appliance: charger sleep and stable pickup arming.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`79eea3d` removes the battery-only sleep condition and requires three",
+    "accelerometer samples within 60 mg to arm pickup. On v87, with a one-minute",
+    "timer while plugged in, the tablet slept and stayed asleep four minutes,",
+    "zero wake events in `/data/log/taq102-app.log`. The commit records 17/17",
+    "control-centre host tests passing, including corrected touch-flip arguments.",
+    "Evidence: `src/sleep_state.c`, the commit and README's sleep journal.",
+    "Power-key wake still needs a hands-on check. The accompanying Vibra logo",
+    "asset is decodable, but the v87 smudge/v88 palette work does not prove",
+    "U-Boot rendering; that remains blocked in TODO.md."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-11 - **Appliance: charger sleep and stable pickup arming.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

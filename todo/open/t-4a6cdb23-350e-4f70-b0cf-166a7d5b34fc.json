@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-4a6cdb23-350e-4f70-b0cf-166a7d5b34fc",
+  "title": "Rare `[drm] flip_done timed out` followed by two `vop_crtc_enable`, a",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "250 ms blackout: 1 in 20 slow flips, 0 in 45 min of glcube (2026-09-04).",
+    "Reproduce with `fliptest` pause mode before touching the driver."
+  ]
+}

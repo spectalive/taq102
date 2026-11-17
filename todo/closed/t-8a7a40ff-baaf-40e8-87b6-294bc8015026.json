@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-8a7a40ff-baaf-40e8-87b6-294bc8015026",
+  "title": "The appliance runs on the own kernel",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(v31) and `recovery` holds a real stock-kernel rescue, round trip measured."
+  ],
+  "closed": "2026-09-03",
+  "result": "`taq102-display` loads the PHY module from `/init`; `taq102-app` waits for `/dev/dri/card0`; cube at 5.10 s from power-on. v18 had been our own kernel without the PHY, a blind rescue. `flash-recovery.sh` verifies by readback before writing the BCB. The volume button does not boot `recovery`; it trips the autostart hatch (`KEY_BACK`).",
+  "evidence": [
+    "`docs/evidence/2026-09-03/camera/2026-09-03-v30-appliance-boot.jpg`, `2026-09-03-recovery-stockkernel.jpg`."
+  ]
+}

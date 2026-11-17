@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-53ae0983-1d39-4535-9043-a0e7af350a49",
+  "title": "The panel had no power: RK816 LDO6 was switched",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "off by the regulator core (the stock kernel's disable fails and that is what",
+    "kept it alive); then the first modeset left GPIO2_B4 low (patch 0003). v29",
+    "passes from a clean boot."
+  ],
+  "closed": "2026-09-03",
+  "result": "`regulator-always-on` grafted on `LDO_REG6`; loader-protect off path resets the panel state. Every earlier negative result was taken with the rail off. A truncated `orb cat` zImage cost one dark boot; `tools/pull-kernel.sh` hashes the copy.",
+  "evidence": [
+    "`docs/evidence/2026-09-03/snapshot-*`, `2026-09-03-gpio2-trace-v28-first-modeset.txt`, `camera/2026-09-03-v29-boot.jpg`; `kernel/patches/0003-*`."
+  ]
+}

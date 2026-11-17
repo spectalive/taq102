@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-3c55a9bd-6db1-49f7-a542-baac2f5bcabf",
+  "title": "The two 2026-09-04 the reviewer runs' findings",
+  "state": "done",
+  "category": "documentation",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "archived with the evidence."
+  ],
+  "closed": "2026-09-06",
+  "result": "The two 2026-09-04 the reviewer runs' findings",
+  "evidence": [
+    "commit `52de391`; `docs/evidence/2026-09-05/the review-findings-1-blackframes-touch.md`, `the review-findings-2-lvds-variants.md`."
+  ]
+}

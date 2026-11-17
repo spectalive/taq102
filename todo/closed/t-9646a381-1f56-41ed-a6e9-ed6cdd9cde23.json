@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-9646a381-1f56-41ed-a6e9-ed6cdd9cde23",
+  "title": "`GENPD_FLAG_NO_SYNC_STATE` as the narrow fix",
+  "state": "cancelled",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "for the genpd deadlock. v63 (display stack built in plus that flag) hangs",
+    "before userspace exactly like v62 without it. Superseded by the open item to",
+    "trace a built-in boot; `fw_devlink=off` with the PHY as a module stays."
+  ],
+  "closed": "2026-09-09",
+  "resolution": "legacy item migrated to format 2 without a recorded resolution"
+}

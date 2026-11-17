@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-503d0390-7101-4c61-9b05-f294289e3b69",
+  "title": "The rebuilt PHY module \"will not load\" (`invalid",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "module format`)."
+  ],
+  "closed": "2026-09-03",
+  "resolution": "a zero-byte file on the tablet; every copy now checks size and hash."
+}

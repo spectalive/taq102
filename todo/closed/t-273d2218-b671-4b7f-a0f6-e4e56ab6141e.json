@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-273d2218-b671-4b7f-a0f6-e4e56ab6141e",
+  "title": "v43: the diagnostics ship in the image",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "and `recovery` holds the matching stock-kernel rescue, proved by a BCB round trip."
+  ],
+  "closed": "2026-09-05",
+  "result": "`package/taq102-diag` (`testpattern`, `phytune`, `lvdsdiag`); `recovery` written with `rkdeveloptool wl 196608` and read back byte for byte; `boot-recovery` at raw sector 32800, rescue up on 4.4.103 with Wi-Fi and ssh, sector zeroed, appliance back at 336 MHz.",
+  "evidence": [
+    "commits `c0c9b28`, `6514c1a`; `docs/evidence/2026-09-05/rescue-v43-round-trip.jpg`."
+  ]
+}

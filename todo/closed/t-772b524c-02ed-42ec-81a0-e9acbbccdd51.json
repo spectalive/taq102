@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-772b524c-02ed-42ec-81a0-e9acbbccdd51",
+  "title": "the cube runs. v66 boots Linux 7.3.0-rc2 and",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "starts `glcube` by itself 14 s after power-on: Mesa 26.0.1 lima on the",
+    "Mali-400 MP2, 1024x600, 52.8 FPS, `glGetError 0x0`."
+  ],
+  "closed": "2026-09-09",
+  "result": "the cube runs. v66 boots Linux 7.3.0-rc2 and",
+  "evidence": [
+    "`docs/evidence/2026-09-09-cube/`, images v64-v66 and `zImage-7.3.0-rc2-variant-M` in the archive with SHA256SUMS."
+  ],
+  "resolution": "kernel = variant M unchanged; ramdisk gained `gpu-sched.ko` (the symbol lima was missing) and `taq102-cube`; board DTS gained `&gpu { status = \"okay\"; }` (rk3128.dtsi ships it disabled)."
+}

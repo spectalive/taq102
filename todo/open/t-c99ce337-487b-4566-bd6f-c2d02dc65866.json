@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-c99ce337-487b-4566-bd6f-c2d02dc65866",
+  "title": "`GLCUBE_FINISH=1` (a `glFinish` between `eglSwapBuffers` and scanout)",
+  "state": "blocked",
+  "category": "pending-decisions",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "stays a diagnostic; the black flashes were the accelerometer i2c read in the render loop, since fixed. Decide after a long run whether to drop the switch. Blocked: observation over a long run: any black frame with the default build?"
+}

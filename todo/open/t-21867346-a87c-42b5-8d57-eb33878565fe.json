@@ -1,0 +1,12 @@
+{
+  "tadu": 2,
+  "id": "t-21867346-a87c-42b5-8d57-eb33878565fe",
+  "title": "Why the stock 4.4.103 does not flicker with the VOP IOMMU while our",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "4.4.167 did is unknown and not needed (mainline drops the IOMMU too). Minor."
+  ]
+}

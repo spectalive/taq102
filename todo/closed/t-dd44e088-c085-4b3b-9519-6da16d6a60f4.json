@@ -1,0 +1,22 @@
+{
+  "tadu": 2,
+  "id": "t-dd44e088-c085-4b3b-9519-6da16d6a60f4",
+  "title": "Patch series reconciled: `0001` had absorbed",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`0002`'s two analog-power hunks, so a fresh checkout could not take the",
+    "series in order. `0001` regenerated as the tree minus `0007` minus `0002`."
+  ],
+  "closed": "2026-09-07",
+  "result": "Patch series reconciled: `0001` had absorbed",
+  "evidence": [
+    "in the VM, pristine `HEAD` file + `0001` + `0002` + `0007` is byte-identical (`cmp`) to the driver the kernel is built from; before, `0002` reported \"2 out of 2 hunks ignored\". README's stale `0001-video-combo-phy-enable-h2p-clock.patch` name corrected."
+  ],
+  "files": [
+    "kernel/patches/0001-video-combo-phy-clocks-and-pll.patch",
+    "README.md"
+  ]
+}

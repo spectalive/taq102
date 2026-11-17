@@ -1,0 +1,28 @@
+{
+  "tadu": 2,
+  "id": "t-8e611626-8191-4d72-a7d9-dc442248e1a1",
+  "title": "Reconcile the desk's inert touch-flip configuration and misleading log",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`src/dmxdesk.c` configures `DMXDESK_TOUCH_FLIP` and prints",
+    "`touch: declared 1663x895, mapping 1024x600, xy`, but never calls",
+    "`touch_input_set_flipped`; the decoder starts with `flipped == 0`, so",
+    "`touch_flip_value` returns after scaling without applying either flip.",
+    "The real mapping is x = round(raw_x * 1024/1664),",
+    "y = round(raw_y * 600/896). `src/glcube.c` does apply its orientation:",
+    "its accelerometer path calls `control_input_reset`, which calls",
+    "`touch_input_set_flipped` in `src/control_input.c`. The inconsistency is",
+    "in dmxdesk, not glcube. Next: decide whether the desk lacks an intended",
+    "setter call or its mode and log are vestigial, then make configuration and",
+    "reporting agree. Leave the working desk unchanged for my show;",
+    "resolve the endpoint bug below before enabling any flip."
+  ],
+  "closed": "2026-10-19",
+  "result": "Decision: the mode and log were vestigial; the desk keeps its behaviour (no flip) and now configures \"none\" and logs \"touch: declared WxH, mapping 1024x600, scale SXxSY, flip none\" (dmxdesk 266de97, released in v0.1.3 and pinned here).",
+  "evidence": [
+    "dmxdesk tools/test-dmx-desk-host.sh exit 0, 45/45 PASS on macOS and 45/45 on Linux (OrbStack); tools/build-dmxdesk.sh and make O=/work/output-mainline dmxdesk build v0.1.3 under -Werror (GCC 14.3.0)."
+  ]
+}

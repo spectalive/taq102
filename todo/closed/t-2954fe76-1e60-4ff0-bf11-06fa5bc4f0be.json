@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-2954fe76-1e60-4ff0-bf11-06fa5bc4f0be",
+  "title": "`tools/vm-hash-check.sh` compares the",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "tracked sources on the Mac and through the VM's mount before a build; the",
+    "README build notes name `<pkg>-dirclean` as the resync."
+  ],
+  "closed": "2026-09-07",
+  "result": "`tools/vm-hash-check.sh` compares the",
+  "evidence": [
+    "`tools/vm-hash-check.sh` run against `src` and `br2-external` (result in the run report)."
+  ]
+}

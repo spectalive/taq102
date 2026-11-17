@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-30ed71f8-321b-4bbd-8d43-90566a01752a",
+  "title": "The PLL jitter mechanism is probable, not proven (prediv 12 runs the",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "phase detector at 2 MHz, prediv 2 at 12 MHz); a 348 MHz probe on 2026-09-04",
+    "was cut off. Only matters if the panel clock ever changes."
+  ]
+}

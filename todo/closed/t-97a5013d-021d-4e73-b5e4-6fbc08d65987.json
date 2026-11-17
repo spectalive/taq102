@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-97a5013d-021d-4e73-b5e4-6fbc08d65987",
+  "title": "the reviewer runs: accelerometer read moved off the",
+  "state": "done",
+  "category": "backend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "render thread (the black flashes), touch flip mapped to the KMS mode with",
+    "`GLCUBE_TOUCH_FLIP`, `lvdsdiag` variant harness."
+  ],
+  "closed": "2026-09-04",
+  "result": "the reviewer runs: accelerometer read moved off the",
+  "evidence": [
+    "`src/accel_monitor.c`, `src/touch_flip.c`, `src/lvdsdiag.c`; findings in `docs/evidence/2026-09-05/`."
+  ]
+}

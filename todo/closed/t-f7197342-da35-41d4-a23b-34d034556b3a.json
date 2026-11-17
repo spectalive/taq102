@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-f7197342-da35-41d4-a23b-34d034556b3a",
+  "title": "Our own system boots from `boot` with",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`recovery` as the fallback; autostart at boot, backlight 255, rescue variant."
+  ],
+  "closed": "2026-09-02",
+  "result": "BCB lives at `misc` + 16 KB (LBA 24608), not AOSP offset 0; nothing may boot Android between a recovery flash and its boot (`install-recovery.sh` restores stock). USB ACM console 2.68 s after kernel start.",
+  "evidence": [
+    "commits `3c7ca78`, `8cb318b`; README \"Where the image lives now\"."
+  ]
+}

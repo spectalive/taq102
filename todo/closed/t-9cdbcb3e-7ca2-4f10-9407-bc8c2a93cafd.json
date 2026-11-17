@@ -1,0 +1,25 @@
+{
+  "tadu": 2,
+  "id": "t-9cdbcb3e-7ca2-4f10-9407-bc8c2a93cafd",
+  "title": "2026-09-26 - **Author identity rewritten in this repository and in",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "spectalive/dmxdesk.** Owner's word the same day: no more Favish work, so",
+    "no `cristian@favish.com` on GitHub. `git filter-repo --mailmap` mapped it to",
+    "`me@cristiandeluxe.dev` on 202 commits here and 92 in dmxdesk plus both of",
+    "dmxdesk's tag annotations. Trees are unchanged (main tree 3f30a693... here,",
+    "549589f8... in dmxdesk). main here 5ba96ca -> e66d40f; dmxdesk main and",
+    "v0.1.1 2c7e64c -> ffebf19, v0.1.0 -> 3bef6b4. So the v90 tablet's `VERSION`",
+    "names 2c7e64c, which is ffebf19 now. The v0.1.1 tarball embeds the commit id,",
+    "so its pinned hash moved afd40f12... -> be44aec2.... Backup bundles and",
+    "commit maps are in `~/Backups/*-favish*` on the mini."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-26 - **Author identity rewritten in this repository and in",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

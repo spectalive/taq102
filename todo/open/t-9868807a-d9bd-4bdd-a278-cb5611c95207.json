@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-9868807a-d9bd-4bdd-a278-cb5611c95207",
+  "title": "Built-in `CONFIG_PHY_ROCKCHIP_INNO_VIDEO_COMBO_PHY=y` hangs the boot at",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "the PHY's first power-on, before any console; loading the module from `/init`",
+    "(`taq102-display`) is the workaround and the cause is open (`README.md`,",
+    "\"The display, and what the boot images were really doing wrong\"). Patch",
+    "0001's HCLK_VIO_H2P clock did not remove it."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-5134c6c9-d0d0-44f6-aebe-4b6a241261a1",
+  "title": "2026-09-11 - **Mainline: submit Wi-Fi patches 0018 and 0019 upstream.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`2e8c06c` records the first submission; `d7450e9` corrects its delivery",
+    "result. Six simultaneous list deferrals hit cPanel's five-deferral limit",
+    "and discarded the first attempt. Sending the cover alone established the",
+    "greylist entry; then both patches delivered to both lists and the maintainer,",
+    "all three messages Completed, queue empty. Evidence: those commits and",
+    "`kernel/mainline/README.md`, \"Submitted upstream\". Delivery is complete;",
+    "upstream review/acceptance remains open."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-11 - **Mainline: submit Wi-Fi patches 0018 and 0019 upstream.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

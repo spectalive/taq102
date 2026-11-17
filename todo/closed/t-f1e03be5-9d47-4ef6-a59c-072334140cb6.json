@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-f1e03be5-9d47-4ef6-a59c-072334140cb6",
+  "title": "README \"Status\" points at the current",
+  "state": "done",
+  "category": "documentation",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "state; the first DTS's bus-format comment corrected and the file marked",
+    "superseded; the 2026-09-01 the reviewer research archived in `docs/research/`;",
+    "the brain page's \"Still open\" list drops the two settled questions."
+  ],
+  "closed": "2026-09-07",
+  "result": "README \"Status\" points at the current",
+  "evidence": [
+    "`docs/research/2026-09-01-the review-route-findings.md` (607 lines, from the archive disk); brain commit `e79d20d9`, pushed."
+  ]
+}

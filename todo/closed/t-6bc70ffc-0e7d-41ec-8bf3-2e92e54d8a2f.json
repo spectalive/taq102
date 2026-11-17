@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-6bc70ffc-0e7d-41ec-8bf3-2e92e54d8a2f",
+  "title": "touch works. The GSL3673 reports a",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "1664x896 grid with X inverted; the DTS says so and glcube scales the",
+    "declared range to the panel (v75, confirmed at the tablet; v74 had Y inverted",
+    "from a corner test done with the tablet turned round). glcube also finds",
+    "its input nodes by device name. Evidence: raw captures decoded in",
+    "`kernel/mainline/FINDINGS.md`, \"Touch works, once the geometry is told\"."
+  ],
+  "closed": "2026-09-09",
+  "result": "touch works. The GSL3673 reports a",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

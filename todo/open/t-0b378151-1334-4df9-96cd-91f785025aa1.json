@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-0b378151-1334-4df9-96cd-91f785025aa1",
+  "title": "U-Boot parks the panel-enable GPIO2_B4 low because the hybrid tree has no",
+  "state": "blocked",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "`lvds@20038000` node for it to read; patch 0003 repairs that at the first modeset. Adding the node would hand over a lit panel and drop the dependency. Blocked: a device-tree change U-Boot itself reads; needs a resource flash and someone at the buttons if it does not come up."
+}

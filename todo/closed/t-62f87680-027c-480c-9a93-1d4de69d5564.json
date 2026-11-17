@@ -1,0 +1,26 @@
+{
+  "tadu": 2,
+  "id": "t-62f87680-027c-480c-9a93-1d4de69d5564",
+  "title": "2026-09-13 - **Desk: hold capacity covers the map.** The seventeenth",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "burst formerly had no slot. `desk_hold.[ch]` now uses MAP_MAX_CONTROLS",
+    "(256) throughout; `desk_build_holds.[ch]` disables failed registrations",
+    "with a reason, and runtime release batches cover that capacity. The host",
+    "regression builds 260 controls, checks all excess controls unavailable,",
+    "fires the seventeenth and last valid slot, and covers mixed holds/bursts.",
+    "`desk_hold_test.c` now tests the map bound instead of the obsolete 16.",
+    "Evidence: `tests/dmx-desk/desk_build_holds_test.c`; post-task host gate",
+    "28 PASS / 6 FAIL, the six socket-bind failures already present at baseline.",
+    "The later unrestricted-suite acceptance is recorded in the host and VM",
+    "verification closure above."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Desk: hold capacity covers the map.** The seventeenth",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

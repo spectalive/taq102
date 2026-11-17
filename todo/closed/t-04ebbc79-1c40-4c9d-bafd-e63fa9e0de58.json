@@ -1,0 +1,11 @@
+{
+  "tadu": 2,
+  "id": "t-04ebbc79-1c40-4c9d-bafd-e63fa9e0de58",
+  "title": "Replace U-Boot, and mainline first",
+  "state": "cancelled",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-01",
+  "resolution": "never needed; the stock boot chain stays and the recovery ramdisk is ours. Mainline is the later track (see `TODO.md`)."
+}

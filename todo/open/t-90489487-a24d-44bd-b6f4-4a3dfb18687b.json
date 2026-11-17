@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-90489487-a24d-44bd-b6f4-4a3dfb18687b",
+  "title": "Hands-on checks on v46 (2026-09-07): open the panel with a swipe down from",
+  "state": "blocked",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "the bar and judge the look; drag brightness; leave it unplugged for the chosen minutes and see it sleep, then pick it up and see it wake; tap Wi-Fi off and on. Blocked: needs hands and eyes on the tablet."
+}

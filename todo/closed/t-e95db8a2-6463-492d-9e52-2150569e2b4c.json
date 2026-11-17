@@ -1,0 +1,11 @@
+{
+  "tadu": 2,
+  "id": "t-e95db8a2-6463-492d-9e52-2150569e2b4c",
+  "title": "Backlight default",
+  "state": "cancelled",
+  "category": "pending-decisions",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-07",
+  "resolution": "I wants it to adjust itself; the brightness controller and the manual slider replace a fixed default."
+}

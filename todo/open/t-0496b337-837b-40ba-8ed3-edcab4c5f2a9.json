@@ -1,0 +1,22 @@
+{
+  "tadu": 2,
+  "id": "t-0496b337-837b-40ba-8ed3-edcab4c5f2a9",
+  "title": "Second design leftovers, from the reviewer's critique of the built frames",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(`docs/evidence/`): the burst durations",
+    "and their priority over a running state want a rig session (the reviewer's",
+    "per-hit judgment is in `docs/evidence/`:",
+    "fog and full-intensity flashes win HTP; colour hits can mix to white over",
+    "a complementary state, strobes can lose a shutter to a running chase);",
+    "the master's readout and thumb still want a look on the tablet under",
+    "a finger; segmented discs have stepped edges (no anti-aliasing in the",
+    "round-rect primitive); accents in the show's own captions (\"AUTO rapido\",",
+    "\"Circulo\") are the show's to fix; CABEZAS heading \"AUTO\" covers \"Centro\" too.",
+    "The running-room word overlap is fixed and covered by the geometry audit",
+    "(2026-09-13), including a maximum-length room caption."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-56c4d4e0-bbb3-450a-9955-572ff42f880a",
+  "title": "The charging bolt is a 5-by-7 bitmap scaled up, so it is the one blocky",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "shape left in a bar that is otherwise smooth. Only visible while charging",
+    "and only at close range; a small vector path would settle it."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tadu": 2,
+  "id": "t-606d7d2c-ea37-4947-8041-51139ff9b2b7",
+  "title": "Raise the build VM's memory",
+  "state": "cancelled",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-07",
+  "resolution": "left to the run. OrbStack gives 8 GB overall on a 16 GB Mac; a full `make` passed at that size on 2026-09-07 with `kbuild` stopped, so nothing is raised. Keep `kbuild` stopped while building."
+}

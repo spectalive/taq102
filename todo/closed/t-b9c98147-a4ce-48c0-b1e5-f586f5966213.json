@@ -1,0 +1,26 @@
+{
+  "tadu": 2,
+  "id": "t-b9c98147-a4ce-48c0-b1e5-f586f5966213",
+  "title": "Fix false desk staleness when QLC+ sends WebSocket Ping/Pong without",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "text (2026-09-13). Instrumentation reproduced three drops in ten minutes",
+    "with no preceding loop iteration over 200 ms. The packet-correlated drop",
+    "closed only 605 ms after the desk answered a master Ping; that activity",
+    "was discarded by the text-only silence clock. Count valid control frames,",
+    "preserve one outstanding probe's RTT clock, and keep the 750 ms threshold.",
+    "Replay fails before the fix and passes after it, including a real-silence",
+    "drop at 751 ms. Host gate: 41 PASS, 0 FAIL. Control-frame fix alone: one transport-loss",
+    "drop in ten minutes; the final 100 ms probe cadence had zero drops in",
+    "its completed ten-minute window.",
+    "Evidence: `docs/evidence/2026-09-13-link-regression/README.md`."
+  ],
+  "closed": "2026-11-17",
+  "result": "Fix false desk staleness when QLC+ sends WebSocket Ping/Pong without",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

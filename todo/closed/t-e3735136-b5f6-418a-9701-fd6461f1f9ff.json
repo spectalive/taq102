@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-e3735136-b5f6-418a-9701-fd6461f1f9ff",
+  "title": "`loader-watch.sh` still polls `rkdeveloptool` with no per-call timeout, so",
+  "state": "done",
+  "category": "infrastructure-and-tooling",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "any future libusb wedge hangs it rather than reporting one. The Pioneer daemon",
+    "that used to cause it is disabled now (`TODO_LOG.md`, 2026-09-13), which",
+    "removes the known trigger but not the failure mode. Smallest action: a",
+    "per-call `timeout` around `rkdeveloptool` and a line saying what it means."
+  ],
+  "closed": "2026-10-19",
+  "result": "Each rkdeveloptool ld poll runs under a perl alarm (RK_TIMEOUT, default 10 s; macOS has no timeout(1)); a timeout prints what it means and polling continues. Writes are never timed out.",
+  "evidence": [
+    "Fake rkdeveloptool runs: hanging fake (RK_TIMEOUT=1 TIMEOUT=5) printed the wedge line twice and gave up after 5 s in 6.2 s total; no-device fake gave up after 3 s; loader fake caught it and zeroed the BCB; real rkdeveloptool with no tablet: gave up after 3 s, exit 1."
+  ]
+}

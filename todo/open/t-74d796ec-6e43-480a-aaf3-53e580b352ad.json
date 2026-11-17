@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-74d796ec-6e43-480a-aaf3-53e580b352ad",
+  "title": "Experiment 3, the panel under a desk's load: throwaway benchmark with",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "the existing painter (XY pad, cached colour field, two faders, warmed text,",
+    "status updates, live network traffic) recording p50/p95/p99 paint and",
+    "present, missed flips, input-to-queued-command, RSS, `MemAvailable`, packed",
+    "image size and battery current. A fresh touch drag test comes first, since",
+    "the v75 and v85 notes disagree about the touch stack."
+  ]
+}

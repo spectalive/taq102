@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-d4dd27f8-24ea-4976-9e90-46915e157d71",
+  "title": "Patches 0018 and 0019 are with upstream: delivered 2026-09-11 to Ping-Ke",
+  "state": "in_progress",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "Shih, linux-wireless and linux-kernel, from `me@cristiandeluxe.dev` via nova,",
+    "all three messages `Completed` with an empty queue. The thread should be in",
+    "`lore.kernel.org/linux-wireless`; review mail goes to that account. Nothing",
+    "to do until someone replies."
+  ]
+}

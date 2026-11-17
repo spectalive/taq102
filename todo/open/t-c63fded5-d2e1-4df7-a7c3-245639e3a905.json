@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-c63fded5-d2e1-4df7-a7c3-245639e3a905",
+  "title": "Supplicant lifecycle waits remain outside the desk loop:",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`wpa_ctrl_open` waits up to 1 s for `ATTACH`, and `wpa_ctrl_close` waits up",
+    "to 200 ms for `DETACH` (including cleanup after a failed open). Runtime",
+    "card, join, and rollback requests are asynchronous. Evidence:",
+    "`src/wpa_ctrl.c`, `src/wpa_ctrl_close.c`, and",
+    "`docs/evidence/`.",
+    "Smallest next step: make event attachment asynchronous so an unresponsive",
+    "daemon cannot delay touch startup; send DETACH without waiting at exit."
+  ]
+}

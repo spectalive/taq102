@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-0b683e8a-6c33-44ec-8db4-d452b0b31a57",
+  "title": "2026-09-11 - **Mainline: restrict the PCIe DMA write to PCIe.** Patch",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "0019 changes the interface mask of the MAC 0x301 write in",
+    "`trans_act_to_lps_8703b`, matching the sibling and vendor tables instead",
+    "of touching PCIe DMA on SDIO. `8b45f35` records clean checkpatch and v86",
+    "verification: interface down/up reassociates and obtains an address,",
+    "warm reboot recovers Wi-Fi, no mac-power-on failure. Evidence:",
+    "`kernel/mainline/0019-wifi-rtw88-8703b-stop-the-PCIe-DMA-write-reaching-SDI.patch`",
+    "and `docs/evidence/2026-09-10-wifi/README.md`."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-11 - **Mainline: restrict the PCIe DMA write to PCIe.** Patch",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

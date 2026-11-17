@@ -1,0 +1,27 @@
+{
+  "tadu": 2,
+  "id": "t-00e53dfe-7ad9-411f-a09f-fa6959b9266e",
+  "title": "2026-09-13 - **Desk: one optical system for status icons.** I report:",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "\"the Wi-Fi icon is huge next to the battery and the lock, the gear is",
+    "different again, each one a different size, and the Wi-Fi one is ugly.\"",
+    "`tools/icons.py` defines an 18 px optical box and 2 px stroke, a gear 10%",
+    "smaller and battery 2 px wider; Wi-Fi has three concentric, evenly spaced",
+    "arcs with round ends plus its dot. Regenerated `src/icon_data.h` with",
+    "Pillow 12.3.0, preserving the enum, bitmap format, size and call sites.",
+    "`icon_test.c` checks all alpha extents within the box plus 1 px, and disjoint",
+    "Wi-Fi layers. Its old >10-pixel minimum became >0 for the smaller dot;",
+    "statusbar assertions are unchanged. Both tests pass; post-task gate",
+    "29 PASS / 6 FAIL, unchanged socket restrictions. Host preview inspected;",
+    "hands-on approval on the tablet is not claimed."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Desk: one optical system for status icons.** I report:",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

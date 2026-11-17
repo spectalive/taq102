@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-7c3f0b10-db24-48a3-a0af-48212d51222d",
+  "title": "the reviewer round 3 (\"console without UART, what",
+  "state": "cancelled",
+  "category": "documentation",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "must be captured now\")."
+  ],
+  "closed": "2026-09-01",
+  "resolution": "never answered (model at capacity); answered in practice by the USB ACM gadget console the next day."
+}

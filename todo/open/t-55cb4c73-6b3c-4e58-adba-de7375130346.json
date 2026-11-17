@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-55cb4c73-6b3c-4e58-adba-de7375130346",
+  "title": "`cck_pd_set` is NULL for 8703b where 8723d has",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`rtw8723d_phy_cck_pd_set`: dynamic CCK packet-detection thresholds, which",
+    "help 11b reception in noise. A feature this chip could have rather than a",
+    "defect; it needs 8703b's own threshold tables, not a copy of the sibling's."
+  ]
+}

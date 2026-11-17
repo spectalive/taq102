@@ -1,0 +1,13 @@
+{
+  "tadu": 2,
+  "id": "t-939b9f1a-f147-4e81-ab43-a7a905a58244",
+  "title": "Bluetooth: which of the three RTL8723CS firmware variants this board loads",
+  "state": "pending",
+  "category": "future-ideas",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(`_cg` and `_vf` are byte-identical, `_xx` differs) is not established, and",
+    "nothing has tried BT."
+  ]
+}

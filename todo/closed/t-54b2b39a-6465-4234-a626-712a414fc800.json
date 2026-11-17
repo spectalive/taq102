@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-54b2b39a-6465-4234-a626-712a414fc800",
+  "title": "MAINTAINERS entry for `rk816_charger.c`",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(in 0008); the board DTS needs none, `get_maintainer.pl` already routes",
+    "it to the ARM/Rockchip entry. Series re-verified: `git am` 17/17, tree",
+    "equal to the VM's, `checkpatch --strict` clean bar the added-file",
+    "reminder on 0017."
+  ],
+  "closed": "2026-09-09",
+  "result": "MAINTAINERS entry for `rk816_charger.c`",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

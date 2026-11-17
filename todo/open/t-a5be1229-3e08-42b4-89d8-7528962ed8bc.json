@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-a5be1229-3e08-42b4-89d8-7528962ed8bc",
+  "title": "Qualify the RK816 input-limit cache fix in mainline patch 0008 on a",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "later authorised kernel boot. On 2026-09-13, sysfs reported 1500 mA while",
+    "hardware held 450 mA (0xa1=0x40); an accepted repeat override did not write",
+    "through the nonvolatile regmap cache. One direct 0x45 write restored",
+    "+634..+640 mA charging within 10 s. The patch now makes USB_CTRL volatile,",
+    "forces immediate masked writes, uses live PMIC presence, and expires the",
+    "override in the unplug IRQ. Patch application and the userspace callback",
+    "regression passed; complete kernel compilation and live IRQ/sysfs tests",
+    "remain unverified. Evidence: `docs/evidence/2026-09-13-charging/README.md`."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-0478700e-c6bf-45ef-8cfa-f219f1e939a6",
+  "title": "Decide the appliance's automatic known-supply policy after VBUS returns",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "The existing init override runs only at boot, so a mains cut while the tablet",
+    "stays up leaves no automatic reapplication. Recommendation: a supervised",
+    "appliance service watching USB/AC presence with polling fallback, applying",
+    "the explicitly configured limit on return or a live-limit mismatch, verifying",
+    "readback and reporting persistent discharge. No policy implemented; see",
+    "`docs/evidence/2026-09-13-charging/README.md` for scope and verification."
+  ]
+}

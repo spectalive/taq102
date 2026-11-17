@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-3327e369-be19-4fa6-a508-11f492d29a66",
+  "title": "`/data/log/taq102-app.log` grows without rotation: 143,431,240 bytes on",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "2026-10-19 after 22 days up, mostly the desk's `desk: N flips so far` line",
+    "every ten seconds. A `grep` over it pegged the tablet (load 15) and outlived",
+    "the ssh timeout. Next: rotate or cap it in the launcher (keep the last few",
+    "MB), and decide whether an unchanged flips line needs repeating."
+  ]
+}

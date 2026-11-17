@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-fa458f66-9f73-4ac1-8b3f-d2479d7b3ab9",
+  "title": "The device tree names the i2c-2 0x18 sensor `STK8BAxx`; it is a Silan",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "SC7A20 (WHO_AM_I 0x11), and the vendor `lis3dh.c` would refuse it too (it",
+    "checks for 0x33), so no DT rename binds a kernel driver. `src/accel.c` drives",
+    "it raw. Drop the node with the next resource-image flash to silence",
+    "`sensor_chip_init: ops is null`; not worth a flash on its own."
+  ]
+}

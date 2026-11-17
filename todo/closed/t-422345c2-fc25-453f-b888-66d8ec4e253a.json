@@ -1,0 +1,43 @@
+{
+  "tadu": 2,
+  "id": "t-422345c2-fc25-453f-b888-66d8ec4e253a",
+  "title": "2026-09-13 - **Desk: the bank pager catches lower-edge presses.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`146dd73` fixes the remaining complaint after the earlier 8 px release",
+    "margin: presses near the bezel never became bank presses in the first",
+    "place. Non-grabbing `evtest` on `/dev/input/event0` captures my",
+    "real gig-style taps. With the desk's actual scale-only transform,",
+    "x = round(raw_x * 1024/1664), y = round(raw_y * 600/896), the eight",
+    "lower-edge presses land at y 587..596. The drawing ends at 583 and the",
+    "glass at 599: that 16 px margin returns TARGET_CONTENT, so release slop",
+    "cannot rescue the contact. Normal taps at y 541..553 and upper-half taps",
+    "at y 533..538 already work. The configured \"xy\" in the touch log is inert;",
+    "dmxdesk never calls `touch_input_set_flipped` (tracked in TODO.md).",
+    "`src/desk_pager_hit.[ch]` extends each segment's hit rectangle to DESK_H;",
+    "`desk_input.c` uses it for both press targeting and the cached release",
+    "rectangle. Painting stays with `desk_view_pager`, unchanged.",
+    "Completed verification supplied for this write-up: the unsandboxed host",
+    "suite records **38 passed, 0 failed**, against 37 before. The new",
+    "`tests/dmx-desk/desk_pager_edge_test.c` replays 16 captured taps, including",
+    "all 8 formerly lost lower-edge presses, and asserts each reaches its bank;",
+    "the segment gap and a single-bank page do not become pager targets.",
+    "`desk_view_test.c` and the new test include `desk_pager_hit.c` in SOURCES",
+    "to resolve a link error. The VM cross-build is clean with GCC 14.3.0 and",
+    "`-Wall -Wextra -Werror`. Deployed at 192.168.1.71, sha256",
+    "`d195bfe7b0ed8c34441a834350cca516288e579694894b4460f69c223bbc2534`",
+    "matches the Mac, `/tmp/dmxdesk` and the running process's `/proc/<pid>/exe`.",
+    "The build script includes the new source; its first edit failed with",
+    "`SRC: unbound variable` because `$SRC` was unescaped in the heredoc.",
+    "The corrected `\\$SRC` passes the supplied `sh -n` check. These checks",
+    "are already completed and are not rerun for this documentation commit."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Desk: the bank pager catches lower-edge presses.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

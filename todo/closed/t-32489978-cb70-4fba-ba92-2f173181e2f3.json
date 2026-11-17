@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-32489978-cb70-4fba-ba92-2f173181e2f3",
+  "title": "Flicker root-caused to the VOP's IOMMU; dropped",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(v37)."
+  ],
+  "closed": "2026-09-04",
+  "result": "`fliptest` split the flip path from the content (two identical buffers flicker, the same buffer does not); `iommus` removed from the vop node, CMA buffers at 0x88600000, 54.8 FPS kept. Mainline's rk3128.dtsi has no VOP IOMMU either (Alex Bee, LKML 2023-12-16: silicon bug).",
+  "evidence": [
+    "`src/fliptest.c`; `tools/make-hybrid-dts.py` graft 7; `kernel/rk3126-taq102-hybrid.dts`."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-f85eef5a-d227-4c3d-85cc-4eb412e26be2",
+  "title": "A logo is not a brick; host tools",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "scripted."
+  ],
+  "closed": "2026-09-02",
+  "result": "the tablet sat at the Denver logo because the BCB still said `boot-recovery` and `recovery` held a non-booting image; zeroing sector 24608 brought it back. `tools/get-rkdeveloptool.sh`, `tools/get-mkbootimg.sh`, and a watcher polling `rkdeveloptool ld` once a second.",
+  "evidence": [
+    "commit `4281d04`; README \"Two images, and how to get a console\"."
+  ]
+}

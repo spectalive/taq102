@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-faec4596-47e0-4d41-bc6d-24aa42fc90f2",
+  "title": "Two control-centre host tests do not build on Linux: GCC 15 (OrbStack",
+  "state": "done",
+  "category": "infrastructure-and-tooling",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`taq102`, -Werror) rejects `snprintf` into 256-byte paths with",
+    "-Wformat-truncation in `tests/control-centre/backlight_test.c:25` and",
+    "`settings_test.c:91`; macOS clang passes all 19 (2026-10-19, 17/19 on",
+    "Linux). Smallest action: size those buffers for the joined path (or check",
+    "the return), then rerun `tools/test-control-centre-host.sh` in the VM."
+  ],
+  "closed": "2026-11-04",
+  "result": "backlight_test.c and settings_test.c now assert each path snprintf returns less than the buffer size, so GCC's -Wformat-truncation no longer fires and a truncated path aborts the test instead of passing silently.",
+  "evidence": [
+    "tools/test-control-centre-host.sh: 19/19 PASS under GCC 15.3.0 (docker gcc:15; the OrbStack taq102 VM no longer exists) and 19/19 under macOS clang; gcc-16 -Werror compiles both files clean."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-ece02051-ed67-4d3f-a1f6-5de290ac4a38",
+  "title": "Extend geometry-audit state/routing coverage. The full-pixel detector",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "mirrors the runtime's fresh-contact dispatch in `audit/reach.c`; arbitrary",
+    "network text, every disabled/busy combination, lock transitions and partial",
+    "redraws are not exhausted. Evidence: the original audit's Limits section",
+    "and the triage report. Next: add a busy/disabled setup fixture and a shared",
+    "pure routing seam before changing runtime dispatch, preserving model probes."
+  ]
+}

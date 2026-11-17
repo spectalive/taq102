@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-50962a95-0da2-45c8-94e2-27af6c4d64fd",
+  "title": "The image builds: Buildroot 2026.02.3,",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "headers pinned to 4.4, Ubuntu 26.04's `uutils` and C23's `constexpr` worked",
+    "around, cross-built in the OrbStack machine `taq102`."
+  ],
+  "closed": "2026-09-02",
+  "result": "The image builds: Buildroot 2026.02.3,",
+  "evidence": [
+    "first three commits; `br2-external/configs/taq102_defconfig`."
+  ]
+}

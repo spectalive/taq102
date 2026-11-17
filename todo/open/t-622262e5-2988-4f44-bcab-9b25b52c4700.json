@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-622262e5-2988-4f44-bcab-9b25b52c4700",
+  "title": "Experiment 2, the link cold with no venue Internet: Mac as AP from a",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "cold start (band, security, DHCP, firewall, reachability), repeated after a",
+    "reboot, then the same on the travel router. Thirty minutes of timestamped",
+    "traffic while dragging two controls, reporting p50/p95/p99 of the",
+    "application round trip. Then pull the Wi-Fi: controls must disable within",
+    "750 ms, nothing may replay, the Mac must still run the show."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-1bd32f31-17db-4c91-befb-db0de0301505",
+  "title": "v44 and v45 flashed and proved: kernel with",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "patches 0006 and 0007, the reset-pulse PHY module, and the new user space in",
+    "`boot`; the matching stock-kernel rescue in `recovery`; BCB round trip done."
+  ],
+  "closed": "2026-09-07",
+  "result": "v44 booted first with the old module still in `blobs/` (patch 0007 absent), so `blobs/phy-rockchip-inno-video-combo-phy-4.4.167.ko` was replaced by the v44 build (md5 `0739dbab`) and v45 packed and flashed. From a clean v45 boot: build `20260907-162319-23127e9`, `4.4.167`, module md5 on the tablet `0739dbab`, PHY registers `REG03=0x02 REG04=0x1C` (336 MHz), `REG00=0x7D REG01=0xE0 E4=0xAA` (analog on, defaults after the reset pulse), LVDS bound at 4.40 s, glcube 54.8 FPS, `CDP1.5A input=1500` kept; fb blank/unblank cycle drops and restores the GSL3673 reset pin and the chip answers with the IRQ count climbing 6 to 13. Round trip: `boot-recovery` at raw sector 32800, rescue up on 4.4.103 with the screen turned by the sensor (y 943 mg), zeroed, appliance back. Camera: `docs/evidence/2026-09-07/`. Both flashes readback-verified; the `boot` write used `tools/flash-boot.sh`, `recovery` used the new `--no-bcb` mode; `tablet.sh reboot-loader` returned in 0.75 s and the loader appeared 4 s later (the 2026-09-03 hang is gone). The webcam renders the rescue screen as a green-to-pink gradient under BOTH kernels while the scanout buffer under ours measures amber and opaque, so the gradient is panel angle plus camera, not the VOP; my eyes are the final word. Images archived in the archive disk[45]-*.img`.",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ],
+  "files": [
+    "blobs/",
+    "br2-external/",
+    "log/v44/` (untracked artifacts)"
+  ]
+}

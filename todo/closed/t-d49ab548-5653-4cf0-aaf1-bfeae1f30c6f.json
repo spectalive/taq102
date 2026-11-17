@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-d49ab548-5653-4cf0-aaf1-bfeae1f30c6f",
+  "title": "2026-09-09 - **Mainline: retire the old ramoops recovery race.**",
+  "state": "cancelled",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`7de354a` proved the RAM mailbox survives a warm reboot, but the button",
+    "recovery cuts power and erases DRAM. Reading earlier after that recovery",
+    "cannot retrieve the failed boot's log. `8c72a6a` then captured the actual",
+    "genpd lock wait with the shell alive, in",
+    "`docs/evidence/2026-09-08-mainline/genpd-deadlock-stack.txt`.",
+    "The existing live built-in-boot trace / fw_devlink task owns the remaining",
+    "deadlock work; the crash-dump task and its unexercised-rescue duplicate are",
+    "removed from TODO.md."
+  ],
+  "closed": "2026-11-17",
+  "resolution": "legacy item migrated to format 2 without a recorded resolution"
+}

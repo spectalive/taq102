@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-d1b0cbf2-ad93-4e27-93a0-5af0adb6e3df",
+  "title": "the button dance landed after the v54 white",
+  "state": "done",
+  "category": "recovery",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "screen, the BCB was zeroed and v49 came back with glcube running; the",
+    "mainline crash log was not recovered (ramoops does not survive the power",
+    "cycle the dance needs)."
+  ],
+  "closed": "2026-09-08",
+  "result": "the button dance landed after the v54 white",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

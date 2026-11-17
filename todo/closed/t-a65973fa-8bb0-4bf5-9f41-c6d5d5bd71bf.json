@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-a65973fa-8bb0-4bf5-9f41-c6d5d5bd71bf",
+  "title": "The volume-button combination boots",
+  "state": "cancelled",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`recovery`."
+  ],
+  "closed": "2026-09-02",
+  "resolution": "the tablet has two buttons; the combination reaches loader mode, the single button trips the autostart hatch. The paths are software."
+}

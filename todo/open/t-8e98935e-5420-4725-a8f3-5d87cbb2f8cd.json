@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-8e98935e-5420-4725-a8f3-5d87cbb2f8cd",
+  "title": "Qualify the generated `Vibra.qxw` gig copy from the show repository's",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`qlctool` worktree. Its map already carries 132 controls, seven pages, two",
+    "dials and 17 bounded bursts; generation is complete. Next: agree durations",
+    "and colour/shutter priority at the rig, then regenerate and validate the",
+    "map with the approved show and bind it to the workspace actually loaded.",
+    "Position/colour-attribute additions need their own output-range evidence."
+  ]
+}

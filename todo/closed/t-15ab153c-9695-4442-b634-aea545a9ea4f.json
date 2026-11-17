@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-15ab153c-9695-4442-b634-aea545a9ea4f",
+  "title": "\"The serial clock must be 7x the pixel clock\"",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(350 MHz, prediv 12)."
+  ],
+  "closed": "2026-09-05",
+  "resolution": "measured with LDO6 off; superseded by the vendor's 336 MHz pair, which drives the panel with a hundredfold less jitter."
+}

@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-3080441f-7f1d-418a-8667-dbe26599f017",
+  "title": "The XY pad's range disagrees between the two sources: the workspace's",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`<Pan Min=\"0\" Max=\"255\"/>` and `<Tilt Min=\"0\" Max=\"255\"/>` against",
+    "`/vc.json`'s `horizontalRange {min:0,max:0}` and `verticalRange",
+    "{min:0,max:256}` for the same widget 0 (2026-09-12). One of them is not the",
+    "window the engine clamps to. Settle it in experiment 1 by sending the",
+    "extremes and reading the resulting DMX, before the desk maps a finger onto",
+    "either."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-de117ed5-3822-4db5-83a5-a131c9330bda",
+  "title": "2026-09-12 - **Desk: heartbeat implementation and measured RTT.** The",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "dedicated heartbeat prevents an idle healthy link expiring while waiting",
+    "for QLC+'s five-second websocket ping. Recorded 2744 samples over 30 min:",
+    "p50 19 ms, p95 47 ms, p99 50 ms, max 319 ms, zero drops. Evidence:",
+    "`docs/evidence/2026-09-12-desk-phase1/heartbeat-rtt-30min.log` identifies",
+    "the old `deluxe-eventos` map with 1 of 11 controls enabled. This closes",
+    "implementation/RTT only; the ten-minute untouched current-show scene",
+    "acceptance has been restored to TODO.md as unverified."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-12 - **Desk: heartbeat implementation and measured RTT.** The",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

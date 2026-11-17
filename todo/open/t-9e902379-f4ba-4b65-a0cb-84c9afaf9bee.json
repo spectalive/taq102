@@ -1,0 +1,12 @@
+{
+  "tadu": 2,
+  "id": "t-9e902379-f4ba-4b65-a0cb-84c9afaf9bee",
+  "title": "A page or bank change repaints the whole screen once, about 41 ms on",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "the tablet: one frame, off the drag path, so it stays."
+  ]
+}

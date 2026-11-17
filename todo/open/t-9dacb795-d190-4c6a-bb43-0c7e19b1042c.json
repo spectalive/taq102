@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-9dacb795-d190-4c6a-bb43-0c7e19b1042c",
+  "title": "Confirm the reconnect status on the physical tablet. dmxdesk v0.1.10",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "shows a small status-bar warning during connection and sync, leaving the",
+    "page undimmed; the render test covers both states. Next: inspect the screen",
+    "during a deliberate master disconnect and reconnect over weak Wi-Fi."
+  ]
+}

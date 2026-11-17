@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-7a760361-8ec4-4d6d-8847-49360fdb09c0",
+  "title": "Package the mainline modules. v66's ramdisk is hand-assembled:",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`gpu-sched.ko`, `lima.ko`, `drm_shmem_helper.ko` and",
+    "`phy-rockchip-inno-dsidphy.ko` copied from the kernel build into the",
+    "Buildroot rootfs next to `taq102-cube` (now `br2-external/package/taq102-cube`).",
+    "The mainline defconfig should take them from the kernel's `modules_install`,",
+    "and `taq102_mainline_defconfig` should build the kernel from",
+    "`kernel/mainline/` in the first place."
+  ]
+}

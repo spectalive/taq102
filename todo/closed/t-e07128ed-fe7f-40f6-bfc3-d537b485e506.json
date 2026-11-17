@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-e07128ed-fe7f-40f6-bfc3-d537b485e506",
+  "title": "The tablet answers to `taq102.local`:",
+  "state": "done",
+  "category": "integrations",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "hostname set in `/init`, sent to DHCP as option 12, and `mdnsd` (Buildroot",
+    "package, SSH service) started on `wlan0` once the lease is in."
+  ],
+  "closed": "2026-09-07",
+  "result": "The tablet answers to `taq102.local`:",
+  "evidence": [
+    "`dns-sd -G v4 taq102.local` on the Mac returns 192.168.1.57 within a second on both the appliance and the rescue; ssh by that name used for every check after the flash."
+  ],
+  "files": [
+    "br2-external/configs/taq102_defconfig",
+    "br2-external/package/taq102-wifi/taq102-wifi",
+    "br2-external/board/taq102/rootfs-overlay/init"
+  ]
+}

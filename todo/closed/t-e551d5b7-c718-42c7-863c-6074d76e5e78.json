@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-e551d5b7-c718-42c7-863c-6074d76e5e78",
+  "title": "Triage the desk geometry audit (2026-09-13). Brightness now reaches",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "8..255 on its painted track, the room/link word is bounded after the tabs,",
+    "exterior coordinates cannot commit touches, and setup arrows are 48x48.",
+    "The detector retains its original thresholds and exhaustive probes; its",
+    "injected 16 px pager strip still fails. Evidence and verification:",
+    "`docs/evidence/`."
+  ],
+  "closed": "2026-11-17",
+  "result": "Triage the desk geometry audit (2026-09-13). Brightness now reaches",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-c3a5c438-3746-4c7b-8bb0-23c6afb11087",
+  "title": "Check the unterminated mainline defconfig patch-directory assignment",
+  "state": "done",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`br2-external/configs/taq102_mainline_defconfig` contains",
+    "`BR2_GLOBAL_PATCH_DIR=\"` with no closing quote (already present at HEAD).",
+    "The desk package was validated using the existing VM configuration plus",
+    "`olddefconfig`, not a fresh defconfig import. Next: test a fresh import in an",
+    "isolated output directory and normalize the intended empty string if needed."
+  ],
+  "closed": "2026-10-19",
+  "result": "BR2_GLOBAL_PATCH_DIR=\"\" (the intended empty value: the comment above says the 4.4-headers patch does not apply on mainline; unterminated since a44a877).",
+  "evidence": [
+    "Fresh import in the taq102 OrbStack VM (Buildroot 2026.02.3): make O=/work/defcheck-new BR2_EXTERNAL=.../br2-external taq102_mainline_defconfig rc=0, no Kconfig warnings, .config has BR2_GLOBAL_PATCH_DIR=\"\"; the HEAD file imported the same way warned \"old_mainline_defconfig:38: warning: invalid string found\"."
+  ]
+}

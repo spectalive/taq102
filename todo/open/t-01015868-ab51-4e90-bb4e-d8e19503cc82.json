@@ -1,0 +1,12 @@
+{
+  "tadu": 2,
+  "id": "t-01015868-ab51-4e90-bb4e-d8e19503cc82",
+  "title": "`/dev/rga` (2D accelerator) is available and unused; `particles` could",
+  "state": "pending",
+  "category": "future-ideas",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "blit through it instead of the CPU."
+  ]
+}

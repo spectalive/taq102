@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-be61d7c0-9dd7-461a-9115-e58287e0ff0a",
+  "title": "Rescue screen shows battery and Wi-Fi (v35),",
+  "state": "done",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "then an iOS-style status bar (v39); glcube keeps a resting spin (v36)."
+  ],
+  "closed": "2026-09-04",
+  "result": "the Mac's USB port drains the tablet at brightness 255 (`NONE USB` 450 mA) and a USB-C hub charges it (`CDP1.5A`); the start-up spin was coasting to a stop in 5 s.",
+  "evidence": [
+    "commits `c50d311`, `70968c1`; `docs/evidence/2026-09-04/`; `RESCUE_DUMP` frame."
+  ]
+}

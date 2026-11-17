@@ -1,0 +1,25 @@
+{
+  "tadu": 2,
+  "categories": {
+    "appliance": "Appliance",
+    "backend": "Backend",
+    "blocked": "Blocked",
+    "bugs": "Bugs",
+    "database": "Database",
+    "dmx-desk-phase-a": "DMX desk (Phase A)",
+    "documentation": "Documentation",
+    "frontend": "Frontend",
+    "future-ideas": "Future ideas",
+    "general": "General",
+    "infrastructure": "Infrastructure",
+    "infrastructure-and-tooling": "Infrastructure and tooling",
+    "integrations": "Integrations",
+    "kernel": "Kernel",
+    "kernel-and-drivers": "Kernel and drivers",
+    "mainline": "Mainline",
+    "pending-decisions": "Pending decisions",
+    "recovery": "Recovery",
+    "security": "Security",
+    "testing": "Testing"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-899c8b49-f190-40f4-939c-fbb39e171684",
+  "title": "`usb2phy` charger detection reports all cable states zero with VBUS",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "present and the gadget enumerated (2026-09-10). This does not diagnose wiring",
+    "or bvalid: `EXTCON_USB` is only published for SDP, and peripheral mode does",
+    "not disable detection. Unknown ports stay at 450 mA; the appliance's explicit",
+    "userspace override requests 1.6 A, rounded down to 1500 mA, and unplug clears",
+    "the override. The board's DCP limit is not an automatic unknown-port fallback.",
+    "Evidence: `docs/evidence/2026-09-10-charging/README.md`, review section,",
+    "`c6aaef3`. Next: trace BC1.2 detection with known SDP and DCP sources before",
+    "attributing the all-zero state to a hardware signal."
+  ]
+}

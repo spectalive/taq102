@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-3f106298-ca95-4d1a-9e0e-3efbf472d863",
+  "title": "patch series reviewed and rebuilt. Findings",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "acted on: 0011 conflicted with 0007; no messages or Signed-off-by on most",
+    "patches; PHY leak on the rk312x LVDS probe error paths; no DT binding for",
+    "`rockchip,rk3126-lvds`; silead NAK tolerance unscoped; RK816 message",
+    "stale and a division that could reach zero; stale numbering in README and",
+    "config. Series is now `git format-patch` output, 12 patches, `git am`",
+    "applies all twelve onto `28924df2a` and the tree equals the VM's (0 diff",
+    "lines). v69 built from it runs on the tablet."
+  ],
+  "closed": "2026-09-09",
+  "result": "patch series reviewed and rebuilt. Findings",
+  "evidence": [
+    "`docs/evidence/2026-09-09-cube/v69-console-reviewed-series.log`."
+  ]
+}

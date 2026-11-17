@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-214b147f-96a0-4d51-a4cb-b2277e2b88cd",
+  "title": "2026-09-13 - **Desk: remember the bank on each page.** I report:",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "\"on the colours page he switches to page 2, changes tab, comes back, and",
+    "has to press page 2 again.\" `desk_set_view` remembers each clamped bank;",
+    "tab selection recalls it. `desk_rebuild_model.[ch]` saves every page's bank",
+    "around console validation and clamps it on restore, while new layouts",
+    "start at zero. Evidence: `tests/dmx-desk/desk_bank_memory_test.c`, including",
+    "hidden pages, a shrinking bank count and removed pages. Post-task gate",
+    "29 PASS / 6 FAIL, the same environment failures; no tablet check claimed."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Desk: remember the bank on each page.** I report:",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

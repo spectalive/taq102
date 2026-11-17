@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-0512fb90-52be-4360-ad3e-f43baccc7919",
+  "title": "A camera closed the measurement loop and the",
+  "state": "done",
+  "category": "testing",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "panel was proved good."
+  ],
+  "closed": "2026-09-03",
+  "result": "`tools/panel-camera/` (brightness and frame-to-frame motion, calibrated: off 33.7, on 104-118, floor 0.74-1.06); forcing the VOP to black left the panel white (deaf, not confused); flashing `boot-taq102-v14.img` back put the cube on the same panel, refuting the reviewer's hardware conclusion. Two real PHY defects found and kept (patch 0002, E4 common mode), neither the cause.",
+  "evidence": [
+    "commits `ee3f808`, `c3ca569`; `docs/evidence/`; `camera/v14-look.jpg`."
+  ]
+}

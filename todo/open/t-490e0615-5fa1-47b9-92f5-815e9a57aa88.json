@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-490e0615-5fa1-47b9-92f5-815e9a57aa88",
+  "title": "A power-off that sticks when unplugged: holding power with USB in reboots",
+  "state": "blocked",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "into charger mode instead of switching off (measured 2026-09-03). Blocked: needs the tablet unplugged and the power button held by hand; RK816 shutdown path in the kernel to read first."
+}

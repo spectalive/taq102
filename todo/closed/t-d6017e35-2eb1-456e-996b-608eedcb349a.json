@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-d6017e35-2eb1-456e-996b-608eedcb349a",
+  "title": "SSH over Wi-Fi, key-only, keys on `/data`;",
+  "state": "done",
+  "category": "backend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "reflashing through `reboot-loader` needs neither serial nor Android."
+  ],
+  "closed": "2026-09-02",
+  "result": "SSH over Wi-Fi, key-only, keys on `/data`;",
+  "evidence": [
+    "commit `5df0c6a`; `br2-external/package/taq102-ssh`."
+  ]
+}

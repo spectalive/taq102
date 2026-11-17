@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-2bf6711a-cc88-4e45-983c-242e02153083",
+  "title": "Wi-Fi up with the vendor `8723cs.ko` under the",
+  "state": "done",
+  "category": "backend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "stock kernel; MAC pinned in `/data/wifi.mac` because `rk_vendor_read` fails."
+  ],
+  "closed": "2026-09-02",
+  "result": "Wi-Fi up with the vendor `8723cs.ko` under the",
+  "evidence": [
+    "commit `85e5e13`; ping 1.1.1.1 in 20 ms, HTTP fetched; `blobs/8723cs-4.4.103.ko`."
+  ]
+}

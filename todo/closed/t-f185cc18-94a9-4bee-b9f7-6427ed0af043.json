@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-f185cc18-94a9-4bee-b9f7-6427ed0af043",
+  "title": "Touch alive on the own kernel, cube no longer",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "freezes (v40)."
+  ],
+  "closed": "2026-09-04",
+  "result": "fbcon's `consoleblank=600` reset the GSL3673 through the fb-blank notifier (`taq102-app` unbinds fbcon); the vendor tree's `gsl3673.h` was another panel's firmware (patch 0005 installs the stock arrays); a slot silent for 0.5 s counts as lifted; KEY_POWER sleep/wake; status bar in glcube.",
+  "evidence": [
+    "commit `242e478`; GSL IRQ count climbing on `/proc/interrupts`; confirmed touch, button and no flicker 2026-09-04 17:25."
+  ]
+}

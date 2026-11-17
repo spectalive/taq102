@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-9ccf97de-4196-4b54-ab26-4056d6dd5415",
+  "title": "2026-09-13 - **Diagnostics: install panel-trap; remove the stale hash.**",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`taq102-diag.mk` installs the shell script separately from its five C tools",
+    "into `/usr/bin/panel-trap`, 0755. The real install recipe passes",
+    "`tests/dmx-desk/diag_install_test.c` with GNU install, checking content and",
+    "permissions. Removed orphan `vc-vibra.sha256`; the retained",
+    "`vc-vibra.json.sha256` matches the fixture (f9ba17eb...). Post-task gate",
+    "30 PASS / 6 FAIL, all six pre-existing bind restrictions. Image deployment",
+    "and automatic startup remain open."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-13 - **Diagnostics: install panel-trap; remove the stale hash.**",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "tadu": 2,
+  "id": "t-1692c4f5-0eb9-430d-9e09-a686ee0e67d7",
+  "title": "The desk as a professional busking surface: the plan is",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`docs/journal.md` (the reviewer reviews in",
+    "`docs/evidence/` and",
+    "`docs/evidence/`). Approved 2026-09-12.",
+    "The show is `Vibra.qxw` on DMX-Fixtures' `qlctool` branch (worktree",
+    "the fixture tool repository). Phases 0 (link trust), 1 (qualify the show,",
+    "generated map, LIVE states and PARAR TODO), 2 (pages, lock, power key,",
+    "damage repaint), 3 (setup without ssh) and 4 (speed: two cards, tap, BPM",
+    "steps, half and double time, Tap both) have implementation and bench",
+    "evidence; see `TODO_LOG.md` 2026-09-12. Phase 4's acceptance gate remains",
+    "unmet: the spec requires touch-to-DMX p95 under 100 ms, but",
+    "`docs/evidence/2026-09-12-desk-phase4/tablet.txt` records touch-to-ECHO only,",
+    "seven samples 39/40/45/56/58/145/179 ms (nearest-rank p95 179 ms).",
+    "Next: measure timestamped touch-to-DMX with enough samples and resolve the",
+    "tail before accepting the phase. Phase 5's 17 finite accents are built;",
+    "rig timing/HTP priority and cooldown remain open, as does Phase 6 position.",
+    "Show readiness is not established by these bench checks alone."
+  ]
+}

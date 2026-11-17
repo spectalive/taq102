@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-7ab1e6db-18a6-47f2-a89c-be8fdf3fa8d5",
+  "title": "Retain expanded setup list-row hits intentionally. Each of eight audited",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "rows accepted 4,000 px beyond its paint (8 px sides, 4 px vertically).",
+    "`desk_setup_row_hit` declares that envelope; the audit verifies it without",
+    "deriving allowance from successful hits. Regression obligation: update the",
+    "declaration with any row-layout change. The old arrow offset was corrected."
+  ],
+  "closed": "2026-11-17",
+  "result": "Retain expanded setup list-row hits intentionally. Each of eight audited",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

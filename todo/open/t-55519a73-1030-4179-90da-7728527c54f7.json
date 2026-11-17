@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-55519a73-1030-4179-90da-7728527c54f7",
+  "title": "The new boot logo draws as a smudge (observed 2026-09-11, v87). The BMP is",
+  "state": "blocked",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "provably well formed -- 600 rows of exactly 1024 pixels, runs only, the vendor's own palette since v88 -- and Pillow decodes it back correctly. That proves the asset decodes, not that U-Boot renders it correctly; the source of the smudge remains unverified. Blocked on seeing it: `uboot_logo=0x02000000@0x9dc00000` is a reserved simple-framebuffer that `/dev/mem` refuses under `CONFIG_STRICT_DEVMEM` and that DRM has replaced by the time there is a shell, so the boot has to be filmed. The iPhone works as a Continuity Camera over USB-C on the Mac mini. Cheapest discriminator once there are eyes: flash a resource image with the stock logo and see whether DENVER appears. If it does, U-Boot draws our resource and the file is at fault; if the screen is white, U-Boot never drew our logo and the smudge is something else entirely."
+}

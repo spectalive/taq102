@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-d261644a-b797-43dc-b23d-f37b60299999",
+  "title": "Touch on mainline works in recorded sessions, but intermittent failure",
+  "state": "in_progress",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "is not ruled out. On v85 (2026-09-10), IRQ gpio2 15 stayed at 164, the pin",
+    "stayed low, and the controller reported zero fingers over i2c; I",
+    "never confirmed touching inside those measurement windows. That cannot",
+    "establish that the controller never scans. Real finger taps retimed both",
+    "dials on 2026-09-12 (`docs/evidence/2026-09-12-desk-phase4/tablet.txt`).",
+    "Next: capture a timestamped finger/drag test with IRQ and finger-count",
+    "readings at the same time; compare start-up writes only if a confirmed",
+    "contact produces no events."
+  ]
+}

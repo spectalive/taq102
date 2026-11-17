@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-8bc26c76-ce15-426d-8df4-6ccf904f6c53",
+  "title": "Mali-400 up with the r7p0 GBM blob (glibc,",
+  "state": "done",
+  "category": "backend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "openssl for six RSA/BN symbols, no SONAME); `glcube` at 54.3 FPS on the",
+    "56.14 Hz panel."
+  ],
+  "closed": "2026-09-02",
+  "result": "Mali-400 up with the r7p0 GBM blob (glibc,",
+  "evidence": [
+    "commit `d34eb9e`; `br2-external/package/mali-utgard`."
+  ]
+}

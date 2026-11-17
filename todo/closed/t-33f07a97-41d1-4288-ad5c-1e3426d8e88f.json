@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-33f07a97-41d1-4288-ad5c-1e3426d8e88f",
+  "title": "`particles`: a KMS particle field, 6000 of",
+  "state": "done",
+  "category": "frontend",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "them at the panel's 56 Hz, tear-free; the musl 64-bit `time_t` made",
+    "`struct input_event` 24 bytes against the kernel's 16 and ate every touch."
+  ],
+  "closed": "2026-09-02",
+  "result": "`particles`: a KMS particle field, 6000 of",
+  "evidence": [
+    "commits \"particles: ...\" (2026-09-02); `src/particles.c`."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-455cd5b1-b948-4d06-b634-380f7bc7ff3f",
+  "title": "Confirm the restored C desk reconnects to the intended QLC+ master",
+  "state": "done",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-10-21",
+  "result": "The configured tablet destination remained unchanged; the C desk and Mac Qt trial both connected to the intended show.",
+  "evidence": [
+    "QLC+ Vibra opened Vibra.qxw on port 9998; HTTP 200 and two established tablet connections were observed, including the running C desk. The Qt backend logged link ready (linked)."
+  ]
+}

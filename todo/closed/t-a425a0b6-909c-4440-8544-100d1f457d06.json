@@ -1,0 +1,28 @@
+{
+  "tadu": 2,
+  "id": "t-a425a0b6-909c-4440-8544-100d1f457d06",
+  "title": "the reviewer's review of the whole control-centre change",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(session `01a07d7f`) found three defects, fixed and shipped as v47: the",
+    "rescue reboot skipped `sync()` (pending `/data` writes could be lost);",
+    "the brightness sample was judged with the frame's timestamp, older than",
+    "the sample's own, so the policy reset its window every time and Auto",
+    "could stay at 255; and the touch decoder reset its slot to 0 on a flip or",
+    "a cancel while the kernel kept slot 1, which could lose the first finger",
+    "of a pinch."
+  ],
+  "closed": "2026-09-07",
+  "result": "the reviewer's review of the whole control-centre change",
+  "evidence": [
+    "`test_slot_selection_survives_flip_and_cancel` in `tests/control-centre/touch_test.c`; 17 host tests pass; v47 (build `20260907-202158-bb04db0`) flashed to `boot` and `recovery`, readback-verified, 54.8 FPS from the clean boot, BCB zero."
+  ],
+  "files": [
+    "src/reboot_target.c",
+    "src/control_runtime.c",
+    "src/touch_input.c"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "tadu": 2,
+  "id": "t-7af26a00-2077-43ba-8df2-fd22f3963a41",
+  "title": "The status bar's battery and Wi-Fi icons were",
+  "state": "done",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "oversized and heavy, \"nothing like iOS\" in my words after v48."
+  ],
+  "closed": "2026-09-07",
+  "result": "The status bar's battery and Wi-Fi icons were",
+  "evidence": [
+    "photographed off the panel's own scanout before and after, `docs/evidence/2026-09-07-control-centre/statusbar-icons-before-after.png`; 17 host tests pass; shipped as v49 (build `20260907-225750-25be25d`), written to `boot` and read back with SHA-256 matching."
+  ],
+  "resolution": "5 by 11 units instead of 13 by 7, radius h/3, outline h/10, the Wi-Fi sector widened to 55 degrees each side with thinner arcs, gaps tightened, and the real systemGreen and systemRed (`src/statusbar.c`)."
+}

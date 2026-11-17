@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-64f10422-7be7-4283-99bd-f7a18f515be7",
+  "title": "The vendor build warns about DT interrupt properties and executable-stack",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "or RWX segments in the link, and the PHY module about macro attributes",
+    "(2026-09-07 build logs). Harmless today; worth a look before a",
+    "warning-clean build is ever wanted."
+  ]
+}

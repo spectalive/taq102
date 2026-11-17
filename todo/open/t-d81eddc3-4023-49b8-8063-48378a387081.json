@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-d81eddc3-4023-49b8-8063-48378a387081",
+  "title": "Locate the maskrom test point. Blocked on the same teardown. Today's ways",
+  "state": "blocked",
+  "category": "blocked",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "into loader mode are `reboot-loader` from a running system and both buttons from a dark U-Boot, which took several tries each time."
+}

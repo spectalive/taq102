@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-5e11980f-d702-4271-826f-ca9a6d0a6a2c",
+  "title": "2026-09-13 - **Desk: retire the June qualification assumptions.** The",
+  "state": "cancelled",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "old widget ids, 24-of-376 function count and `tools/show-manifest.py` task",
+    "were superseded by generated `show/vibra.desk.json` (132 controls, seven",
+    "pages, two dials, 17 bounded bursts), `995e261`, `fca61bf`, `8892dcc` and",
+    "`ecc3379`. The show has a generator; the remaining identity gap is comparing",
+    "its hash with the workspace actually loaded on the master. Rig qualification,",
+    "priority and fog cooldown remain open. The appliance purpose is the DMX",
+    "desk; persistent packaging replaces the old undefined-application item."
+  ],
+  "closed": "2026-11-17",
+  "resolution": "legacy item migrated to format 2 without a recorded resolution"
+}

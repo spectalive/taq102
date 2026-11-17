@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-0605c506-9ff6-4e81-b566-0c3db07f3e20",
+  "title": "Phase 3's checks that need a finger on the tablet (the desk runs there",
+  "state": "blocked",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "now with `/data/desk.conf` pointing at this Mac's 9998 instance): tap the gear, scan, join `TestNet5` with its key (not in the brain; I types it on the keyboard) and watch the card come back to the address, then join `TestNet` again from its `known` row; drag the fader and read `/sys/class/backlight/backlight/brightness`, restart the desk and see the level held; the `Dim on battery` toggle. The join transaction is proven against a fake supplicant only (`tests/dmx-desk/wifi_join_test.c`); the event names it waits for are wpa_supplicant's documented ones. Smallest action: I at the tablet with the key, ten minutes."
+}

@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-53a553e7-3dc8-4156-898a-5f89c7ce7903",
+  "title": "Hardware fault in the flex, connector or TCON",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(the reviewer round 2)."
+  ],
+  "closed": "2026-09-03",
+  "resolution": "refuted by the v14 control run on the same panel; the cause was LDO6."
+}

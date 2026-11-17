@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-c2718537-9502-416f-b24a-8bf57f6bbcd9",
+  "title": "Retain deliberately inert backgrounds and gutters. The original 37 dead",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "components mixed empty layout with potential defects. Production inert-mask",
+    "declarations now distinguish them, with hard failures if an exemption covers",
+    "enabled paint or actions. Regression obligation: retain the injected bottom",
+    "16 px pager-strip failure when changing layout or dead-component policy."
+  ],
+  "closed": "2026-11-17",
+  "result": "Retain deliberately inert backgrounds and gutters. The original 37 dead",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

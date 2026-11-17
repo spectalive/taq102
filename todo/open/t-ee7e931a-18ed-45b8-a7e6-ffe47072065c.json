@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-ee7e931a-18ed-45b8-a7e6-ffe47072065c",
+  "title": "Describe the RK816 regulators in the mainline board DTS, hand lima",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`vdd_logic` as `mali-supply`, and only then put `operating-points-v2` back",
+    "on `&gpu`. v66 ran devfreq over the OPP table with the clock alone and the",
+    "Mali hung at 480 MHz after 73 s, unrecoverable by lima's reset (2026-09-09);",
+    "v67 deletes the table and runs at the bootloader's 148.5 MHz, which draws",
+    "the cube at the panel's rate. Vendor figures for the pairing are in",
+    "`kernel/rk3126-taq102-hybrid.dts` (gpu opp table, phandle 0x19)."
+  ]
+}

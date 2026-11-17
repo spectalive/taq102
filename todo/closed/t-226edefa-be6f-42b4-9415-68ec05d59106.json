@@ -1,0 +1,29 @@
+{
+  "tadu": 2,
+  "id": "t-226edefa-be6f-42b4-9415-68ec05d59106",
+  "title": "Qualify the desk's 100 ms heartbeat cadence with its unchanged 750 ms",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "silence deadline. After fixing control-frame activity, a second captured",
+    "drop had no loop stall: the Mac replied in 7 ms, but that reply and its",
+    "retransmission were not acknowledged before the tablet closed. The desk",
+    "had spent 400 ms waiting to probe and gave transport only 405 ms before",
+    "closing. Probe at 100 ms to reserve about 550 ms including an idle poll;",
+    "do not extend the stale deadline. The 514 ms reply replay fails with the",
+    "old cadence and passes with the new one; real silence still drops at 751 ms.",
+    "Radio/AP/driver attribution is not established; Wi-Fi power save is unchanged.",
+    "Final live window [184972682, 185572682) ms: zero drops, versus three",
+    "before the fix in ten minutes. At 20:15:52 UTC, PID 8050 remained linked",
+    "to the host on port 9998. This short live window is not long-show qualification.",
+    "Evidence:",
+    "`docs/evidence/2026-09-13-link-regression/README.md`."
+  ],
+  "closed": "2026-11-17",
+  "result": "Qualify the desk's 100 ms heartbeat cadence with its unchanged 750 ms",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

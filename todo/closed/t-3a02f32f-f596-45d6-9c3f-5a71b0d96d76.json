@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-3a02f32f-f596-45d6-9c3f-5a71b0d96d76",
+  "title": "Capture U-Boot's live PHY registers before the",
+  "state": "cancelled",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "kernel reprograms them."
+  ],
+  "closed": "2026-09-03",
+  "resolution": "with no driver claiming the block it stays clock-gated and reads as zeroes; superseded by instrumenting the running kernel."
+}

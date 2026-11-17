@@ -1,0 +1,20 @@
+{
+  "tadu": 2,
+  "id": "t-7f96fb76-c1f8-43ab-925c-6dfb1ff32a2a",
+  "title": "Retain modal setup navigation intentionally. The 80 zero-reach tab",
+  "state": "done",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "observations described interception, not missing controls. Tabs are now",
+    "explicitly disabled while setup is open in router and audit metadata.",
+    "Regression obligation: keep the all-tabs modal assertion when routing changes;",
+    "gear, lock and the master column remain available."
+  ],
+  "closed": "2026-11-17",
+  "result": "Retain modal setup navigation intentionally. The 80 zero-reach tab",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

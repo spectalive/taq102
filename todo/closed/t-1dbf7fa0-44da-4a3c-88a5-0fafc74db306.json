@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-1dbf7fa0-44da-4a3c-88a5-0fafc74db306",
+  "title": "Charger limit kept on DC detect (patch 0004, v38)",
+  "state": "done",
+  "category": "kernel",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-04",
+  "result": "rk816's DC-detect path no longer overwrites the USB detection's 1500 mA with 450 mA; +584 mA at brightness 255 from power-on.",
+  "evidence": [
+    "`kernel/patches/0004-rk816-battery-keep-usb-input-limit-on-dc-detect.patch`."
+  ]
+}

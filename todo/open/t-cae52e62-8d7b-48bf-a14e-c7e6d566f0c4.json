@@ -1,0 +1,12 @@
+{
+  "tadu": 2,
+  "id": "t-cae52e62-8d7b-48bf-a14e-c7e6d566f0c4",
+  "title": "`modetest` cannot create a dumb buffer (-EINVAL). Moot for glcube,",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "which allocates through GBM and lima, but still unexplained."
+  ]
+}

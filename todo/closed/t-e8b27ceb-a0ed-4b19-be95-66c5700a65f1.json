@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-e8b27ceb-a0ed-4b19-be95-66c5700a65f1",
+  "title": "Rotate the Wi-Fi key exposed in a 2026-09-02",
+  "state": "cancelled",
+  "category": "security",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "transcript."
+  ],
+  "closed": "2026-09-07",
+  "resolution": "accepted (home network, private transcript)."
+}

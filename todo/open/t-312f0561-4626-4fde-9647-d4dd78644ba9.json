@@ -1,0 +1,16 @@
+{
+  "tadu": 2,
+  "id": "t-312f0561-4626-4fde-9647-d4dd78644ba9",
+  "title": "Verify burst priority over a running state at the physical rig (Phase 5)",
+  "state": "in_progress",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "All 25 hits now press capped Flash buttons with Override and ForceLTP, and",
+    "the v96 tablet enables them against the live modified QLC+ runtime. Loopback",
+    "Art-Net keeps all four 7R wheels white over Fiesta and returns them to the",
+    "underlying colour after expiry, including a disconnected client. Next:",
+    "measure colour, shutter, smoke and restoration at the FT232R output."
+  ]
+}

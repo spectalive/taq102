@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-856bf6dd-e935-4a18-8beb-c858b4679ffd",
+  "title": "Hide SHOW's empty Fijo heading when the map has no fixed accent toggle",
+  "state": "done",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "The ed1dac1 map removed `color-beam`; `src/desk_show_layout.c` still emits",
+    "Fijo unconditionally. The host `desk.ppm` shows an empty label to the right",
+    "of five hits; all LIVE controls are placed and geometry passes unchanged.",
+    "Next: emit that heading only for a placed toggle, then rerun renderer and",
+    "geometry checks without relaxing their thresholds."
+  ],
+  "closed": "2026-10-19",
+  "result": "The Fijo heading is emitted only after a fixed accent toggle is placed (dmxdesk cb5df70, v0.1.3).",
+  "evidence": [
+    "dmxdesk desk_layout_test PASS (no Fijo on the shipped map; a LIVE accent turned toggle brings it back over its cue); geometry audit unchanged thresholds: SUMMARY views=30 failures=0 warnings=0; tools/test-dmx-desk-host.sh 45/45 on macOS and Linux."
+  ]
+}

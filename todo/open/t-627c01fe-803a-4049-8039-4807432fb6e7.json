@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-627c01fe-803a-4049-8039-4807432fb6e7",
+  "title": "The brightness controller's failed-probe memory and the 30 s cadence",
+  "state": "pending",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "are tested on the host with traces; a real weak-source run (a plain USB",
+    "port for an hour) has not been recorded yet. Record the level trace from",
+    "the log and check it settles."
+  ]
+}

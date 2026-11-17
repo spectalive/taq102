@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-2292ea5f-c2ac-463f-ad31-815de467c9d5",
+  "title": "Implement the fog cooldown policy once its exact timing is settled",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "I-approved cooldown is not built: `src/desk_build_holds.c` registers",
+    "every burst, including fog, with cooldown 0 (formerly in `dmxdesk.c`).",
+    "The local hold model can express cooldowns, but a master-side burst bound",
+    "alone does not impose a minimum interval between bursts. Next: confirm the",
+    "duration and enforcement point at the rig, then test retriggering and",
+    "reconnects with the rig; keep the master-side duration bound."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "tadu": 2,
+  "id": "t-48ca3dfb-b11a-47fc-9581-81a03adb889a",
+  "title": "the cube froze after 73 s on v66. lima's",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "devfreq (`simple_ondemand`) drove the Mali from the bootloader's 148.5 MHz",
+    "up to 480 MHz over the rk3128.dtsi OPP table with no regulator attached;",
+    "150 transitions, then `pp0 job timeout` every 10 s and no reset recovered",
+    "it. v67 deletes `operating-points-v2` from `&gpu`; 148.5 MHz, no devfreq,",
+    "52.8 FPS, 0 timeouts at 2.5 min and at 23 min (soak sampled every",
+    "5 min)."
+  ],
+  "closed": "2026-09-09",
+  "result": "the cube froze after 73 s on v66. lima's",
+  "evidence": [
+    "`docs/evidence/2026-09-09-cube/v66-gpu-hang-devfreq-480mhz.txt`, `v67-console-no-devfreq.log`."
+  ]
+}

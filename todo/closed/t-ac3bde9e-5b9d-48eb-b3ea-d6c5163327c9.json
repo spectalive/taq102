@@ -1,0 +1,21 @@
+{
+  "tadu": 2,
+  "id": "t-ac3bde9e-5b9d-48eb-b3ea-d6c5163327c9",
+  "title": "Backlog run, wave 1: repo-only items",
+  "state": "done",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-07",
+  "result": "`get-rkdeveloptool.sh` pinned to `304f073` and `get-mkbootimg.sh` to `d2bb0af`; `flash-recovery.sh` gained `--no-bcb` and both flash scripts default to `tools/vendor/rkdeveloptool`; `measure.sh` uses `mktemp`; the shimmer instruments (`zigzag.py`, `shift.py`, `sweep.sh`, `wobble.sh`, `src/bartest.c`) moved out of the session scratchpad into `tools/panel-camera/` with portable paths, `sweep.sh` recording the iPhone device and crop; `taq102-app` comment names the measured `KEY_BACK`.",
+  "evidence": [
+    "`sh -n` clean on every script; `tools/flash-recovery.sh --no-bcb` prints usage and finds the vendor binary (`rkdeveloptool ld` ran)."
+  ],
+  "files": [
+    "tools/get-rkdeveloptool.sh",
+    "tools/get-mkbootimg.sh",
+    "tools/flash-recovery.sh",
+    "tools/panel-camera/*",
+    "src/bartest.c"
+  ]
+}

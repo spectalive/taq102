@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-10a1ee88-1416-4100-8222-4263b673c748",
+  "title": "The tablet drains on the USB-C hub with the input limit at 1500 mA,",
+  "state": "blocked",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "and a write to the RK816's USB_CTRL register un-sticks it. 2026-09-12, brightness 255, `0xa1=0x45` (VLIM 4.4 V, ILIM index 5) throughout: from before 10:24 until 11:00 local `current_now=-259..-292 mA`; 11:00 to 11:07 `+300..+336 mA`; 11:07 on `-231..-260 mA` again, with VBUS (RK816 USB ADC 0xC0/C1, scaled against the battery ADC) sitting at **4.44 V**, which is the input voltage limiter's threshold. `i2cset 0xa1 0x05` (VLIM 4.0 V) gave `+666 mA` and VBUS 3.97 V within 15 s; restoring `0x45` did **not** bring the throttle back: `+650 mA` at VBUS 3.98 V for the next ten minutes and counting. So the limiter latches into a throttled state on some VBUS event and stays there until the register is rewritten, and the 11:00 recovery was probably such a rewrite (something re-ran `update_cables`). The source itself is soft, about 0.5 ohm from the swing (0.9 A for 0.46 V), which is the cable or the hub port, and is why the threshold is reached at all. Not yet known: whether a same-value rewrite re-arms it, or only a change; what the VBUS event is (another device on the hub drawing, a USB reset). Unblock: `panel-trap` now logs VBUS and `0xa1` every minute; at the next drain **with 0xa1 already 0x45**, first try `i2cset -f -y 2 0x1a 0xa1 0x45` (same value) and read the current 15 s later. If that re-arms it, the fix is a periodic rewrite in `rk816_charging_monitor` when plugged in and discharging; if only a change does, the fix toggles VLIM. Either way it is a driver change we own. The 2026-09-13 recovery changed 0x40 to 0x45 and diagnosed a separate stale regmap cache; it does not settle this same-value or voltage-limiter question."
+}

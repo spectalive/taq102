@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-c521d41b-5caa-4ebe-bc8a-bafa13e0fdf3",
+  "title": "Android erased; `userdata` (55 GB) is ext4 at",
+  "state": "done",
+  "category": "database",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`/data`, found by start sector 4867072, persistence verified over two reboots."
+  ],
+  "closed": "2026-09-02",
+  "result": "all eleven partition backups checksum-verified first; 20 KB of `trust` had been zeroed by addressing a partition by number and was restored byte for byte (`PARTITION-NUMBERING-WARNING.md` on the archive).",
+  "evidence": [
+    "commits `28906c0`, `d0bc88f`."
+  ]
+}

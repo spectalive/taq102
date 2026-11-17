@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-14d3fe6b-9e73-461f-8002-05861ed14370",
+  "title": "Locate the Mac-side API response delay captured on 2026-09-13:",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "513 ms from heartbeat arrival on en0 to QLC+ response, with an early TCP",
+    "acknowledgement and no retransmission. The desk loop was not stalled.",
+    "The previous RTT metric overwrote pending send times and censored replies",
+    "after disconnect, so its small maximum did not exclude this delay.",
+    "Next: correlate QLC+ request dispatch and host scheduling with the retained",
+    "packet timeline without restarting my running show. Two other",
+    "diagnostic drops preceded packet capture and lack packet-level attribution.",
+    "Evidence: `docs/evidence/2026-09-13-link-regression/README.md`."
+  ]
+}

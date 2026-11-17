@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-4044b9ab-dc24-4732-af07-2e1c8c04aa0e",
+  "title": "Rescue has a face (v34)",
+  "state": "done",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "closed": "2026-09-03",
+  "result": "`rescue-screen` paints RESCUE MODE, kernel, build id and address from a DRM dumb buffer; the stock VOP blends XRGB as ARGB (alpha 0xFF); the stock kernel's first modeset is blank, so the CRTC is cycled once.",
+  "evidence": [
+    "commit `8fa9f47`; `docs/evidence/2026-09-03/camera/2026-09-03-v34-*.jpg`."
+  ]
+}

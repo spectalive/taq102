@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-4e1a361a-f218-4c95-914f-815046c6dd11",
+  "title": "Locate the UART2 pads (the stock DT puts fiq-debugger on UART2). Blocked:",
+  "state": "blocked",
+  "category": "blocked",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "no teardown, pad map or GPL drop exists for the TAQ-102 or the BND-RK3126C-D708 sibling. Unblock: open the case and probe near the SoC; the headphone-jack theory was reasoned out from the DTB and never measured. Needed only for the mainline track."
+}

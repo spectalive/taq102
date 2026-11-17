@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-4fef65a0-43ca-4cb0-a466-55351552ed3e",
+  "title": "Wobble fixed and the tablet knows which way",
+  "state": "done",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "up it is (v41)."
+  ],
+  "closed": "2026-09-04",
+  "result": "the resting spin's 0.84 s kick is held constant; the i2c-2 0x18 sensor is a Silan SC7A20, driven by `src/accel.c`, and glcube flips picture, bar and touch on Y gravity; status-bar margin, bolt, supersampling.",
+  "evidence": [
+    "commit `444cf39`; confirmed wobble, orientation and bar 2026-09-05."
+  ]
+}

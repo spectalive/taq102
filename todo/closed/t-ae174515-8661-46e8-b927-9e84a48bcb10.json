@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-ae174515-8661-46e8-b927-9e84a48bcb10",
+  "title": "An SD rescue card (idbloader + miniloader",
+  "state": "cancelled",
+  "category": "infrastructure",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "+ our system) to recover the dark tablet."
+  ],
+  "closed": "2026-09-02",
+  "resolution": "superseded by loader mode plus the BCB at LBA 24608, and by `reboot-loader` from the running system; the card was never finished."
+}

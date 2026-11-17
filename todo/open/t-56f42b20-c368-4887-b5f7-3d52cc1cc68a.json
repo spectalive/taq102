@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-56f42b20-c368-4887-b5f7-3d52cc1cc68a",
+  "title": "The controller host and the tablet must land on the same layer-2 segment",
+  "state": "blocked",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "or the desk cannot link. Measured 2026-09-13 across two access points: the host's address was ARP INCOMPLETE from the tablet, unpingable and HTTP-dead, while its wired address answered normally, so the second access point is not bridging the two clients into one segment. An evening was spent blaming QLC+ and the finder for what was a network partition. Why it matters: at a venue the tablet is Wi-Fi only, and if the host drifts onto a different access point mid-show the desk goes dark with both machines \"on the network\". Wired Ethernet as the host's primary (default route, service order 1) is what protects against this. Smallest action: put both on one access point, or set the second to bridge mode, then re-run the finder from the tablet with the host on Wi-Fi only and confirm it still lists the host."
+}

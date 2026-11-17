@@ -1,0 +1,10 @@
+{
+  "tadu": 2,
+  "id": "t-eebef56a-3549-420a-a89c-87166955dd10",
+  "title": "Tembleques on the panel, third sighting 2026-09-12 (observed: \"es la",
+  "state": "blocked",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "blocker": "tercera vez\"), 17 h into the boot, on the desk and then on the cube, at any backlight level. The 2026-09-10 verdict of \"probably self-inflicted by the LDO hunt\" is withdrawn: nothing touched the PMIC this time. What this sighting established, in order: the PHY PLL was at the good pair (`REG03=0x02 REG04=0x1C`, 336 MHz) and the LVDS block at `E1=0x92 E4=0xAA EB=0xF8` while I was seeing it; LDO4/5/6 enabled at 3.3 V; no kernel event; the iPhone rig again measured the floor (0.004 px at 30 fps, 0.025 at 60 fps, flicker 0.13 levels). Then, by my eye, with the fault still believed present: `testpattern bars` clean, `rescue-screen` (Inter text, one buffer) clean, the desk static (1 flip) clean, the desk flipping identical buffers at 49/s clean, the cube clean again. So it had cleared itself between the report and the first pattern, as on the 10th, and every A/B after that ran in the clean state and proves nothing about the mechanism. Blocked on the next occurrence. Unblock: `panel-trap` now logs the PHY, VOP clocks, rails, charger, load, drawing app and kernel lines once a minute to `/data/panel-trap.log` (started by hand on 2026-09-12). The package now installs `/usr/bin/panel-trap`; next build an image with it and add boot startup, then verify a log record after reboot. When it shimmers again: note the time, do not restart anything, `diff` that minute against a clean one, and run the camera on `fliptest vlines` before it clears."
+}

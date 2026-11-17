@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-79977d19-4c70-4853-9f0a-5b1f0e60abf3",
+  "title": "`trans_cardemu_to_carddis_8703b` is the vendor's CARDEMU_TO_PDN table",
+  "state": "pending",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "under the card-disable name: it sets the hardware power-down bit and never",
+    "asks the SDIO interface to suspend, where `trans_cardemu_to_carddis_8723d`",
+    "does both (compared 2026-09-11). Harmless since patch 0018 made the reverse",
+    "transition undo everything the PDN path sets, and 35 hours of running say so,",
+    "but it is the same family of defect as 0018 and worth reporting once someone",
+    "can test a power-off path change."
+  ]
+}

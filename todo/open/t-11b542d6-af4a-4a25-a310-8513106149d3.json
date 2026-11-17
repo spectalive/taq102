@@ -1,0 +1,19 @@
+{
+  "tadu": 2,
+  "id": "t-11b542d6-af4a-4a25-a310-8513106149d3",
+  "title": "Finish the mainline integration. Linux 7.3.0-rc2 boots on hardware",
+  "state": "in_progress",
+  "category": "kernel-and-drivers",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "(v59), Mesa/Lima draws the cube (v64-v66), touch has produced real events,",
+    "and Wi-Fi/charging fixes reached v85-v86. The earlier claim that userspace",
+    "did not exist or the kernel never reached it is superseded by `TODO_LOG.md`",
+    "and `kernel/mainline/README.md`. Still open: reproducible kernel/module",
+    "packaging, the `fw_devlink=off` workaround, regulator-backed GPU OPPs, and",
+    "the remaining driver and hands-on checks below. Next: wire the mainline kernel",
+    "and `modules_install` into the defconfig rather than assembling the ramdisk",
+    "by hand; keep the existing built-in-boot trace task as the deadlock follow-up."
+  ]
+}

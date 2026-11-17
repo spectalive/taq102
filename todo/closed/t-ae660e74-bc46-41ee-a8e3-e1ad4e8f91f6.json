@@ -1,0 +1,28 @@
+{
+  "tadu": 2,
+  "id": "t-ae660e74-bc46-41ee-a8e3-e1ad4e8f91f6",
+  "title": "2026-09-26 - **The desk pinned to dmxdesk v0.1.1; cJSON's licence",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "ships; the host-test script is executable.** v0.1.1 carries the desk map of",
+    "the show built with qlctool v0.1.6 (map sha256 4da61399..., from Vibra.qxw",
+    "12a75704...) and the fixes that make its host tests pass on Linux.",
+    "`DMXDESK_VERSION` and the tarball hash (afd40f12...) moved;",
+    "`tools/get-dmxdesk.sh` reads the tag from the package and checks out",
+    "v0.1.1. No shared file changed between v0.1.0 and v0.1.1 (all 32 compared",
+    "byte for byte), so only the tag line of `src/dmxdesk-shared.txt` moved.",
+    "`DMXDESK_LICENSE_FILES` gains `cJSON.c`, whose header is cJSON's MIT text.",
+    "`tools/test-control-centre-host.sh` is mode 100755 in git. Evidence:",
+    "`make O=/work/output-mainline dmxdesk-legal-info` reports the tarball,",
+    "`LICENSE` and `cJSON.c` OK and copies both licence files; `dmxdesk-build`",
+    "compiles v0.1.1; control-centre suite 19/19; boot test 9/9. Nothing flashed."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-26 - **The desk pinned to dmxdesk v0.1.1; cJSON's licence",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

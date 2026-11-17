@@ -1,0 +1,14 @@
+{
+  "tadu": 2,
+  "id": "t-e5926194-a3fc-49ca-b6ad-b6b0df55f9b2",
+  "title": "Keep a stopping policy for every future control added to the generated",
+  "state": "pending",
+  "category": "dmx-desk-phase-a",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "Vibra map. The current 17 bursts are master-bounded; latched states and",
+    "picks deliberately run until changed or stopped. Next: extend the show's existing generator checks whenever a new action type is",
+    "proposed, proving its stop/timeout and disconnect behaviour at the master."
+  ]
+}

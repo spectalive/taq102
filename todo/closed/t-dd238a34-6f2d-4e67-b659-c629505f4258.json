@@ -1,0 +1,23 @@
+{
+  "tadu": 2,
+  "id": "t-dd238a34-6f2d-4e67-b659-c629505f4258",
+  "title": "2026-09-10 - **Mainline:** 8 hour unattended soak of the cube on v85,",
+  "state": "done",
+  "category": "general",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "clean. The check that matters is progress rather than liveness: the VOP",
+    "interrupt advanced 168 counts in 3 s at the end, exactly the panel's 56 Hz.",
+    "Wi-Fi stayed associated across the whole run, which is the charger and the",
+    "rtw88 fix from the same night both holding. Battery reached 100 % and settled",
+    "to a 13 mA trickle. No GPU hang, flip_done timeout or oops was recorded;",
+    "the sole recurring rtw88 tx-report message appeared 11 times and remains",
+    "its own backlog item. Duplicate active soak entry removed 2026-09-13."
+  ],
+  "closed": "2026-11-17",
+  "result": "2026-09-10 - **Mainline:** 8 hour unattended soak of the cube on v85,",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

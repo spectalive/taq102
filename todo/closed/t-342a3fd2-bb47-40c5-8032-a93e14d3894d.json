@@ -1,0 +1,22 @@
+{
+  "tadu": 2,
+  "id": "t-342a3fd2-bb47-40c5-8032-a93e14d3894d",
+  "title": "series taken through the tools. `checkpatch",
+  "state": "done",
+  "category": "mainline",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "--strict`, `dt_binding_check` and `dtbs_check` (dtschema installed in the",
+    "VM) found: no schema for the board compatible, forbidden reboot modes",
+    "under the PMU, the D-PHY's extra clocks outside their binding, bindings",
+    "inside driver patches, and four style nits. All fixed in the tree; the",
+    "series is 17 `git am`-able patches reproducing it (0 diff lines); v72",
+    "and v73 run it on the tablet. Left: the panel part number and MAINTAINERS."
+  ],
+  "closed": "2026-09-09",
+  "result": "series taken through the tools. `checkpatch",
+  "evidence": [
+    "legacy item migrated to format 2 without a recorded evidence"
+  ]
+}

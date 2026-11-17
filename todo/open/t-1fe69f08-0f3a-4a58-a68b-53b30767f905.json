@@ -1,0 +1,15 @@
+{
+  "tadu": 2,
+  "id": "t-1fe69f08-0f3a-4a58-a68b-53b30767f905",
+  "title": "Verify wake by power key after the v87 sleep fix (2026-09-11)",
+  "state": "in_progress",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "Charger auto-sleep and stillness-based pickup arming are measured and closed",
+    "in `TODO_LOG.md` (`79eea3d`); waking with the power key still needs I",
+    "at the tablet. The Vibra asset decodes correctly, but U-Boot's rendering is",
+    "not accepted: the separate smudge item below remains blocked."
+  ]
+}

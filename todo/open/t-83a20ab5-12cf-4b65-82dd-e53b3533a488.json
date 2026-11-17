@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-83a20ab5-12cf-4b65-82dd-e53b3533a488",
+  "title": "Hands-on tablet check of geometry fixes: brightness's 8..255 end bands,",
+  "state": "pending",
+  "category": "bugs",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "ellipsized long room/link captions and setup's 48x48 paging arrows. Host",
+    "probes and ARM compilation cannot establish physical tap comfort. Evidence:",
+    "`docs/evidence/`. Version v0.1.7 with the 2026-10-21 haze, palette,",
+    "layout, white swatch and BPM refinements was installed on the tablet;",
+    "`docs/evidence/show-v94-live.png` captures its linked SHOW screen. Next:",
+    "check those controls by hand for tap comfort and response on the panel."
+  ]
+}

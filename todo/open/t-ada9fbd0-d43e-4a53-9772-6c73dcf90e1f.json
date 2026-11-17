@@ -1,0 +1,17 @@
+{
+  "tadu": 2,
+  "id": "t-ada9fbd0-d43e-4a53-9772-6c73dcf90e1f",
+  "title": "Add voltage-based low-battery shutdown after a decision",
+  "state": "pending",
+  "category": "appliance",
+  "type": "untriaged",
+  "priority": "untriaged",
+  "notes": [
+    "`kernel/mainline/RK816-BATTERY.md`, \"The zero algorithm\", says the hardware",
+    "can cut out while the driver still reports 3%; voltage must be the trigger.",
+    "No source implements power-off; `src/reboot_target.c` only calls",
+    "`reboot(RB_AUTOBOOT)`. Next: agree a voltage threshold and validation plan",
+    "under show load at the rig, including transient sag and warning time.",
+    "Do not implement or test an unapproved shutdown path during a show."
+  ]
+}
